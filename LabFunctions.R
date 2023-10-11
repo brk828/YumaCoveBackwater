@@ -76,3 +76,4 @@ download_nfwg <- function(sub_folder = ""){
   download.file(NcreasedUrl, destfile = paste0(dest_folder, "NFWGTable.RData"),cacheOK=TRUE, 
                 extra = options(timeout = 200)) 
 }
+
