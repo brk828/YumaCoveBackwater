@@ -122,26 +122,43 @@ BWScanMonths <- BWScanDates %>%
 
 BWScanMonths[is.na(BWScanMonths)] <- 0
 
-BWScanMonthsV <- BWScanMonths %>%
-  filter(StalwartProp >= .90)
+BWScanMonths$MonthName <- factor(month.name[BWScanMonths$Month], levels = month.name)
 
-BWMonthlyPopulationPlot <- ggplot(BWScanMonthsV, aes(x = YearMonth)) +
-  geom_point(aes(y = Uniques, color = UnitType), size = 3) +
-  geom_smooth(aes(y = Uniques, color = UnitType))
-
+# Effort for months greater than zero scanning effort
 BWScanMonthsE <- BWScanMonths %>%
   filter(ScanDays>0)
+
+BWMonthlyEffortBox <-  ggplot(BWScanMonthsE, aes(x = MonthName, y = ScanDays)) +
+  geom_boxplot(fill = "grey") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 BWMonthlyEffortPlot <- ggplot(BWScanMonthsE, aes(x = YearMonth, y = ScanDays, fill = UnitType)) +
   geom_bar(stat = "identity", position = "dodge") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
-BWScanMonthsAboveMean <- BWScanMonths %>%
-  filter(ScanDays >= mean(ScanDays))
 
-StalwartPropBox <-  ggplot(BWScanMonthsAboveMean, aes(x = YearMonth, y = StalwartProp)) +
-  geom_boxplot(aes(group = Month, fill = Month)) +
+StalwartPropBox <-  ggplot(BWScanMonthsE, aes(x = MonthName, y = StalwartProp)) +
+  geom_boxplot(fill = 'grey') +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Months were nearly all Stalwarts were scanned.
+BWScanPopulation <- BWScanMonths %>%
+  filter(StalwartProp >= .20) %>%
+  group_by(Year) %>%
+    summarise(MeanTaggedPop = mean(AllEstimate), 
+              SD = sd(AllEstimate),
+              Count = n()) %>%
+  ungroup() %>%
+  mutate(TaggedSE = SD/sqrt(Count)) %>%
+  select(-SD, -Count) %>%
+  inner_join(Size2PlusAutumn, by = "Year") %>%
+  mutate(AllEstimate = MeanTaggedPop/RecaptureProp, 
+         Lower = (MeanTaggedPop/CI95Low),
+         Upper = (MeanTaggedPop/CI95High))
+
+BWPopulationPlot <- ggplot(BWScanPopulation, aes(x = Year)) +
+  geom_point(aes(y = AllEstimate)) +
+  geom_smooth(aes(y = AllEstimate))
 
 CurrentDataFrames <- ls()[vapply(ls(), function(x) is.data.frame(get(x)), logical(1))]
 

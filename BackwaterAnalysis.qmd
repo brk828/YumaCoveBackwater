@@ -1,0 +1,135 @@
+---
+author: "B.R. Kesner"
+format: html
+echo: false
+---
+
+```{r}
+#| warning: false
+# Before rendering document declare the backwater you are interested in
+StudyBackwater <- "IPCA (Pond 1)"
+
+SurvivalDAL <- 120 # Day cutoff for any post-stocking survival criteria
+Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback
+
+# The MiReleaseDate will be used as a a starting point to determine the 
+# initial stocking cohort (first stocking after this date) and all population
+# trajectories will start after this date.
+MinReleaseDate <- as.Date("2016-11-01") 
+
+# Any size class analysis will break fish into 3 size classes
+# Minimum TL for Size Class 2
+SizeClass2 <- 350
+# Minimum TL for Size Class 3
+SizeClass3 <- 500
+
+source("DataWrangling.R")
+
+# retain a vector of dataframes from data wrangling
+CoreDataFrames <- ls()[vapply(ls(), function(x) is.data.frame(get(x)), logical(1))]
+
+source("KnownPopulationAnalysis.R")
+source("CaptureEventSummaries.R")
+source("LengthWeightAnalysis.R")
+```
+
+---
+title: "`r StudyBackwater` population analysis"
+---
+## Introduction
+This summary analysis for `r StudyBackwater` is auto-generated and results stated within should be considered preliminary.  These results are based on an analysis of stocking, capture, and PIT scanning records starting on `r MinReleaseDate` and ending on `r max(ContactsBW$Date)`.  Several approaches are used to assess the overall status of the population in the backwater.  Known survival analysis provides a detailed fish by fish accounting of the fish that are known to be alive in the backwater based on PIT scanning.  In backwaters with nearly continuous PIT scanning, these known survivor numbers should be no less than 95% of the actual PIT tagged population, as all fish are provided at a minimum `r SurvivalDAL` days of PIT scanning regardless of tagging date.  Backwater sampling events are used to evaluate recruitment, size class distribution, and proportion of tagged to untagged fish in the backwater.  The tagged to untagged proportion is used in conjunction with the known survival analysis to provide point estimates of the adult population size.  The biomass of the most recent sampling event is estimated based on capture records and a length-weight relationship established from all backwater capture data.  Any reduction of biomass through harvest or mortality is assessed through PIT scanning conducted after the most recent autumn harvest.      
+
+## Known Survival
+
+Known survival analysis uses PIT scanning data to track the number of PIT tagged fish alive in the backwater on any given date. For a fish to be included in the total, it must have been tagged and release prior to the date (x-axis), and it must have been scanned at least once `r SurvivalDAL` days after it's release date. This avoids including fish that were scanned within a few days of tagging, but died before contributing significantly to the population. For example, a fish tagged and released on January 1, 2019 will be included in the known population total for every day after January 1, 2019 as long as it was scanned once after May 1, 2019. If it was never scanned again after May 5, 2019, then it will be a part of the known population from January 1, 2019 through May 5, 2019, and removed from the population for all subsequent dates.
+
+The initial stocking into `r StudyBackwater`  on `r InitialStockDate` consisted of `r InitialStockingS$Count[InitialStockingS$Sex == "F"]` females and `r InitialStockingS$Count[InitialStockingS$Sex == "M"]` males, but only `r sum(InitialKnownS$Count)` (`r InitialKnownS$Count[InitialKnownS$Sex == "F"]` females and `r InitialKnownS$Count[InitialKnownS$Sex == "M"]` males) survived to 120 days post-stocking based on PIT scanning data (@fig-SurvivalInitialRelease).  The stair step pattern of known survivors from the initial stocking is indicative of a dramatic decline in survivor numbers over summer months for both sexes.  Based on PIT scanning after the most recent spawning season (`r ifelse(month(Sys.Date()) > 9, year(Sys.Date()), year(Sys.Date())-1)`), the remaining known survivors from the initial stocking include `r RecentKnownS$Count[RecentKnownS$Sex == "F"]` females and `r RecentKnownS$Count[RecentKnownS$Sex == "M"]` males. This represents a mean annual survival of `r as.numeric(AnnualSurvival)*100`% over `r NumberOfYears` years.
+
+```{r}
+#| label: fig-SurvivalInitialRelease
+#| fig-cap: "Initial stocking known survivors over time by sex."
+#| warning: false
+KnownSurvivalPlotFirstStocking 
+
+```
+
+When all tagged fish are included in the known population analysis, increases to the number of known survivors are possible due to the tagging and survival of naturally recruited fish or fish from supplemental stocking (@fig-SurvivalPlotSex and @fig-SurvivalPlotTotal).  Most fish captured, tagged, and released were given juvenile or unknown sex designations.  The proportion of fish with unknown sex therefore increased over time, whereas juvenile fish rarely survived long enough to be added to the known survivors count (@fig-SurvivalPlotSex). 
+```{r}
+#| label: fig-SurvivalPlotSex
+#| fig-cap: "Known survivors over time by sex."
+#| warning: false
+KnownSurvivalPlotSex
+
+```
+
+```{r}
+#| label: fig-SurvivalPlotTotal
+#| fig-cap: "Known survivors over time."
+#| warning: false
+KnownSurvivalPlotTotal 
+
+```
+
+The most recent count (PIT scanning after March of `r year(Sys.Date())`) of known survivors in `r StudyBackwater` is `r CurrentKnownPop` fish (@tbl-CurrentKnownGT).  The survivors tagging history is a combination of stocking and tagging events conducted in the backwater since the original stocking in `r year(InitialStockDate)`.  Mean TL is the mean total length recorded of all known survivors at tagging.
+
+```{r}
+#| label: tbl-CurrentKnownGT
+#| tbl-cap: "Current known survivors tagging history."
+#| warning: false
+CurrentKnownGT 
+```
+
+## Backwater Sampling Events
+
+Sampling events in `r StudyBackwater` have resulted in the capture and tagging of `r TotalCaptures` fish (@tbl-SizeClassGT). Most fish captured were small and did not survive long enough to contribute to the overall spawning population. To separate the small fish unlikely to contribute to the adult spawning population from the larger subadult to adult fish, all captured fish were broken down into three size classes based on the TL at capture; 1 \<`r SizeClass2`, 2 \>=`r SizeClass2` and \<`r SizeClass3`, 3 \>=`r SizeClass3` mm TL.
+
+```{r}
+#| label: tbl-SizeClassGT
+#| tbl-cap: "Capture summary by size class."
+#| warning: false
+SizeClassGT 
+```
+
+Size Class 3 fish were assumed to all be adults, whereas size class 2 fish were assumed to be a mix of subadult and adult fish at the time of capture.  Both size classes together made up the entirety of the potential spawning population.  Although some size class 2 fish were immature at capture, they had a similar survival profile to size class 3, and were likely to mature a year or two following their tagging and release. The proportion of potential spawning fish (size class 2+) that were recaptures (captured with a tag) were assumed to represent the proportion of the total potential spawning population that was PIT tagged within the backwater (@tbl-Size2GT).
+
+```{r}
+#| label: tbl-Size2GT
+#| tbl-cap: "Recapture status for size class 2+."
+#| warning: false
+Size2GT
+```
+
+## Spawning Adult Population Size
+
+The total spawning population (tagged and untagged) was estimated from the recapture proportion (of size class 2+ fish) for all years when there is a autumn or early winter (after September) capture event. The known survivors (@fig-BackwaterPopulation) for each year as of December 1st was divided by the autumn recapture proportion for the same year. The recaptures and total captures used to calculate recapture proportion were adjusted for fish that avoid detection or that were harvested during the capture event by removing fish captured but never scanned after the capture event.  Population estimates were calculated for all years with an autumn sample of more than 10 total captures after adjustment.   The 95% confidence intervals were derived from the binomial distribution based on the autumn capture values (trials = total captures, successes = recaptures).
+
+```{r}
+#| label: fig-BackwaterPopulation
+#| fig-cap: "Adult population estimates based on recapture proportion and known survivors."
+#| warning: false
+EstimatesPlot
+
+```
+
+## Estimating Biomass
+
+Total length (TL) and mass (g) have been recorded for `r LengthWeightDataCount` fish in `r StudyBackwater` (@fig-LWPlot).  The parameters of a length-weight relationship were estimated using maximum likelihood based on these records and was used to estimate mass for fish when TL was recorded but mass was not.  One potential consequence of overcrowding in a backwater and subsequent resource limitation is that the length-weight relationship might change over time. However, this was not the in `r StudyBackwater` as the length-weight relationship was consistent regardless of year (@fig-LWPlot); most recent measurements in black.
+
+```{r}
+#| label: fig-LWPlot
+#| fig-cap: "Length-weight relationship based on all capture and release records."
+#| warning: false
+LWPlot
+
+```
+
+Total biomass of the most recent autumn sampling event `r max(Size2PlusAutumn$Year)` was calculated in kilograms (kg) from individual mass as measured when available or mass estimates based on the length-weight relationship (@tbl-RecentBiomassGT).  Harvest and mortality reduced the available biomass post-sampling, and so the available biomass from surveyed fish was calculated based on recent PIT scanning (contacted at least once in the current year).  
+
+```{r}
+#| label: tbl-RecentBiomassGT
+#| tbl-cap: "Biomass estimate from recent autumn sample and surviving biomass from that sample based on PIT scanning."
+#| warning: false
+RecentBiomassGT
+```
+
+This biomass estimate isn't the total population biomass. The known population in the backwater is `r CurrentKnownPop` fish, and the estimated total population is `r PopulationNow`.  `r as.integer(nrow(CurrentKnownOld)/CurrentKnownPop*100)`% of the known population has been at large for more than 3 years, (`r nrow(CurrentKnownOld)` out of `r CurrentKnownPop` fish, @tbl-CurrentKnownGT). It is likely that most if not all of those fish are Size Class 3 adults. 
