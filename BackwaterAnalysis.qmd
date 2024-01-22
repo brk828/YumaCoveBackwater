@@ -1,13 +1,13 @@
 ---
 author: "B.R. Kesner"
-format: html
+format: pdf
 echo: false
 ---
 
 ```{r}
 #| warning: false
 # Before rendering document declare the backwater you are interested in
-StudyBackwater <- "IPCA (Pond 1)"
+StudyBackwater <- "Yuma Cove backwater"
 
 SurvivalDAL <- 120 # Day cutoff for any post-stocking survival criteria
 Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback
@@ -15,7 +15,7 @@ Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback
 # The MiReleaseDate will be used as a a starting point to determine the 
 # initial stocking cohort (first stocking after this date) and all population
 # trajectories will start after this date.
-MinReleaseDate <- as.Date("2016-11-01") 
+MinReleaseDate <- as.Date("2013-01-01") 
 
 # Any size class analysis will break fish into 3 size classes
 # Minimum TL for Size Class 2

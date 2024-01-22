@@ -54,7 +54,7 @@ LWPlot <- LWPlot + annotate("text", x = min(LengthWeightData$TL),
 png("output/LWPlot.png", width = 6, height = 4, units = 'in', res = 300)   
 LWPlot
 dev.off()
-ggsave(filename = "output/LWPlot.png", plot = LWPlot)
+# ggsave(filename = "output/LWPlot.png", plot = LWPlot)
 
 rm(FormulaText)
 
