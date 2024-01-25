@@ -1,7 +1,8 @@
 ---
 author: "B.R. Kesner"
-format: pdf
+format: html
 echo: false
+output-dir: docs
 ---
 
 ```{r}
