@@ -2,7 +2,6 @@
 author: "B.R. Kesner"
 format: html
 echo: false
-output-dir: docs
 ---
 
 ```{r}
