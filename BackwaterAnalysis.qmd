@@ -26,6 +26,8 @@ SizeClass3 <- 500
 source("DataWrangling.R")
 
 # retain a vector of dataframes from data wrangling
+# This is so I can cleanup temporary dataframes for each analysis but keep the 
+# ones needed for each analysis
 CoreDataFrames <- ls()[vapply(ls(), function(x) is.data.frame(get(x)), logical(1))]
 
 source("KnownPopulationAnalysis.R")
