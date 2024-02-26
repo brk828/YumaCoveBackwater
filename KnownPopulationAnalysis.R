@@ -1,15 +1,20 @@
 # Specific backwater known survival tables and plots
 packages(tidyr)
 packages(gt)
-# Dataframe with just first capture or release must have a scan 120 days or later to be included
+
+# Dataframe with just first capture or release 
 FirstRecordBW <- NFWGTableBW %>% 
   filter(Recapture == "N")
 
+# Filter for "Survivors".  Fish scanned at least once 
+# SurvivalDAL days after release or first capture.  
 FirstRecordSurvivors <- FirstRecordBW %>%
   filter(MaxDAL >= SurvivalDAL)
 
+# Find the initial stock date out of available records.
 InitialStockDate <- as.Date(min(FirstRecordBW$CollectionDate))
 
+# Initial stocking records will match initial stocking date, summarized by sex
 InitialStockingS <- FirstRecordBW %>%
   filter(CollectionDate == InitialStockDate) %>%
   group_by(Sex) %>%
@@ -108,12 +113,6 @@ KnownSurvivalPlotFirstStocking <- ggplot(KnownSurvival %>%
 NumberOfYears <- year(Sys.Date()) - year(InitialStockDate)
 AnnualSurvival <- format(round(exp(log(sum(RecentKnownS$Count)/
                                          sum(InitialKnownS$Count))/NumberOfYears),3))    
-
-#KnownSurvivalPlotFirstStocking <- KnownSurvivalPlotFirstStocking + 
-#  annotate("text", x = min(KnownSurvival$Date), 
-#           y = sum(InitialKnownS$Count) - 5, 
-#           label = paste0("Post-Stocking Annual Survival = ",
-#                          AnnualSurvival), hjust = 0, vjust = 1)
 
 # Yearly Known survival PITs are determined by the known survivors as of December 1 each year
 KnownYearly <- KnownSurvival %>%
