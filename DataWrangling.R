@@ -46,6 +46,16 @@ packages(magrittr)  # allows use of %<>% assignment pipe
 packages(glmmTMB) # General linear mixed model analysis built on TMB automatic differentiation engine
 packages(lubridate)
 
+# If Minimum date supplied, then use that otherwise 
+# find the most recent stocking into the backwater to use as 
+# starting date.
+if(!exists("MinReleaseDate")){
+  MinReleaseDate <-NFWGTable %>%
+    filter(Location == StudyBackwater, !is.na(StockingID)) %>%
+    summarize(MaxCollectionDate = max(CollectionDate)) %>%
+    pull(MaxCollectionDate) %>% as.Date()
+}
+
 # Restrict PITindex dataframe to study backwater only
 PITIndexBW <- BWPITIndex %>%
   filter(Backwater == StudyBackwater, Species == Sp) %>%
