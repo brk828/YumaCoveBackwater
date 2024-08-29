@@ -55,7 +55,9 @@ packages(ggplot2)
 packages(dplyr)     # data manipulation
 packages(magrittr)  # allows use of %<>% assignment pipe
 packages(glmmTMB) # General linear mixed model analysis built on TMB automatic differentiation engine
-packages(lubridate)
+packages(lubridate) # Date manipulation
+packages(tidyr) # pivot_wider and other functions
+packages(gt) # GT tables
 
 # Restrict PITindex dataframe to study backwater only
 PITIndexBW <- BWPITIndex %>%

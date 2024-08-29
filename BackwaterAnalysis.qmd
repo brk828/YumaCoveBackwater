@@ -7,7 +7,10 @@ echo: false
 ```{r}
 #| warning: false
 # Before rendering document declare the backwater you are interested in
-StudyBackwater <- "Yuma Cove backwater"
+
+# StudyBackwater <- "IPCA (Pond 1)" # uncomment for IPCA
+
+StudyBackwater <- "Yuma Cove backwater" # uncomment for Yuma Cove backwater
 
 SurvivalDAL <- 120 # Day cutoff for any post-stocking survival criteria
 Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback

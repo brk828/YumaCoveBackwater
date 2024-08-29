@@ -83,7 +83,7 @@ ContactLastBW <- ContactsBW %>%
   group_by(PITIndex) %>%
   dplyr::slice(1) %>%
   mutate(LastScan = as.Date(Date)) %>% 
-  select(PITIndex, LastScan, ScanHr)
+  select(PITIndex, LastScan, ScanHr, DateVerified)
 
 # Clean up table, add size classes, create event and disposition fields for future NFWG table structure,
 # and add a recapture field based on actual previous records instead of relying on database classification
