@@ -32,5 +32,6 @@ vignettes/*.pdf
 po/*~
 # RStudio Connect folder
 rsconnect/
-# data folder
-data/
+# ignore large data files in the data folder
+data/*.RData 
+
