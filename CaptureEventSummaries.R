@@ -43,7 +43,7 @@ Size2GT <- gt(Size2PlusPivot %>%
                 rename(Month = MonthName)) %>%
   tab_spanner(label = "Recaptured",
     columns = c(Y, N))
-gtsave(Size2GT, "output/Size2GT.html")
+gtsave(Size2GT, paste0("output/AdultRecaptureProportion ", StudyBackwater, ".html"))
 
 # This dataframe pulls PITs from the last sample for each year
 # used by other script to estimate total population
@@ -101,7 +101,7 @@ EstimatesPlot <- ggplot(BackwaterPopulation, aes(x = as.factor(Year), y = Estima
                        panel.grid.minor.x = element_blank(),
                        axis.line = element_line(color = "black"))
 
-png("output/EstimatesPlot.png", width = 6, height = 4, units = 'in', res = 300)   
+png(paste0("output/PopulationEstimates ", StudyBackwater, ".png"), width = 6, height = 4, units = 'in', res = 300)   
 EstimatesPlot
 dev.off()
 # This produces a complete picture of the Size classes captured during capture events
@@ -116,12 +116,24 @@ SizeClassPivot <- NFWGTableBW %>%
 
 SizeClassPivot[is.na(SizeClassPivot)] <- 0
 
+# if any column is missing, add zeros
+if (!"1" %in% colnames(SizeClassPivot)) {
+  SizeClassPivot$`1` <- 0
+}
+if (!"2" %in% colnames(SizeClassPivot)) {
+  SizeClassPivot$`2` <- 0
+}
+if (!"3" %in% colnames(SizeClassPivot)) {
+  SizeClassPivot$`3` <- 0
+}
+
 # Create the gt table
-SizeClassGT <- gt(SizeClassPivot) %>%
+SizeClassGT <- gt(SizeClassPivot %>%
+                    select(Year, Month, `1`, `2`, `3`)) %>%
   tab_spanner(label = "Size class",
               columns = c(3, 4, 5))
 
-gtsave(SizeClassGT, "output/SizeClassGT.html")
+gtsave(SizeClassGT, paste0("output/CaptureSizeClasses ", StudyBackwater, ".html"))
 CurrentKnownOld <- CurrentKnown %>% filter(Year < year(Sys.Date())-3)
 
 CurrentDataFrames <- ls()[vapply(ls(), function(x) is.data.frame(get(x)), logical(1))]

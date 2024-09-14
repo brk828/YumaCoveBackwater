@@ -8,13 +8,15 @@ echo: false
 #| warning: false
 # Before rendering document declare the backwater you are interested in
 
-# StudyBackwater <- "IPCA (Pond 1)" # uncomment for IPCA Pond 1
+StudyBackwater <- "IPCA (Pond 1)" # uncomment for IPCA Pond 1
 
-StudyBackwater <- "IPCA (Pond 3)" # uncomment for IPCA Pond 3
+# StudyBackwater <- "IPCA (Pond 3)" # uncomment for IPCA Pond 3
+
+# StudyBackwater <- "IPCA (Pond 4)" # uncomment for IPCA Pond 4
 
 # StudyBackwater <- "Yuma Cove backwater" # uncomment for Yuma Cove backwater
 
-SurvivalDAL <- 120 # Day cutoff for any post-stocking survival criteria
+SurvivalDAL <- 90 # Day cutoff for any post-stocking survival criteria
 Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback
 
 # The MinReleaseDate will be used as a a starting point to determine the 

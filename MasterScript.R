@@ -1,9 +1,11 @@
 # Before running any script, declare the backwater you are interested in
-StudyBackwater <- "Yuma Cove backwater"
+# StudyBackwater <- "Yuma Cove backwater"
 
-SurvivalDAL <- 120 # Day cutoff for post-stocking survival
+StudyBackwater <- "IPCA (Pond 4)"
+
+SurvivalDAL <- 90 # Day cutoff for post-stocking survival
 Sp <- "XYTE" # Species of interest GIEL bonytail, XYTE razorback
-MinReleaseDate <- as.Date("2013-01-01") # Limit to fish release on or after this date
+# MinReleaseDate <- as.Date("2013-01-01") # Limit to fish release on or after this date
 
 # Minimum TL for Size Class 2
 SizeClass2 <- 350

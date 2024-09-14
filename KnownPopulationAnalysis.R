@@ -1,6 +1,10 @@
 # Specific backwater known survival tables and plots
 packages(tidyr)
 packages(gt)
+packages(gridExtra)
+
+# Run data wrangling if running script by itself
+if(!exists("ContactsBW")){source("DataWrangling.R")}
 
 # Dataframe with just first capture or release 
 FirstRecordBW <- NFWGTableBW %>% 
@@ -78,11 +82,15 @@ KnownSurvivalPlotSex <- ggplot(KnownSurvival, aes(x = Date)) +
   scale_x_date(date_breaks = "1 month", 
                labels = function(x) ifelse(month(x) == 1, format(x, "%Y"), "")) +
   theme_minimal() +
-  theme(axis.ticks.x = element_line(color = "black", size = 0.5),
+  theme(axis.ticks.x = element_line(color = "black", linewidth = 0.5),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
         axis.line = element_line(color = "black")) +
   labs(x = "Date", y = "Count", color = "Sex")
+
+png(paste0("output/KnownSurvivalBySex ", StudyBackwater, ".png"), width = 6, height = 4, units = 'in', res = 300)   
+KnownSurvivalPlotSex
+dev.off()
 
 KnownSurvivalPlotTotal <- ggplot(KnownSurvival, aes(x = Date)) +
   geom_line(stat = "count") +
@@ -94,7 +102,6 @@ KnownSurvivalPlotTotal <- ggplot(KnownSurvival, aes(x = Date)) +
         panel.grid.minor.x = element_blank(),
         axis.line = element_line(color = "black")) +
   labs(x = "Date", y = "Count")
-
 
 KnownSurvivalPlotFirstStocking <- ggplot(KnownSurvival %>% 
                                            filter(CollectionDate == InitialStockDate), 
@@ -109,6 +116,10 @@ KnownSurvivalPlotFirstStocking <- ggplot(KnownSurvival %>%
         axis.line = element_line(color = "black")) +
   labs(x = "Date", y = "Count")
 
+
+png(paste0("output/KnownSurvival ", StudyBackwater, ".png"), width = 6, height = 6, units = 'in', res = 300)
+grid.arrange(KnownSurvivalPlotSex, KnownSurvivalPlotTotal, nrow = 2)
+dev.off()
 
 NumberOfYears <- year(Sys.Date()) - year(InitialStockDate)
 AnnualSurvival <- format(round(exp(log(sum(RecentKnownS$Count)/

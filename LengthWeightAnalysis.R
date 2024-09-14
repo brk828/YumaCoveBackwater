@@ -51,7 +51,7 @@ LWPlot <- LWPlot + annotate("text", x = min(LengthWeightData$TL),
                             y = max(LengthWeightData$WT), 
                             label = FormulaText, hjust = 0, vjust = 1)
 
-png("output/LWPlot.png", width = 6, height = 4, units = 'in', res = 300)   
+png(paste0("output/LengthWeight ", StudyBackwater, ".png"), width = 6, height = 4, units = 'in', res = 300)   
 LWPlot
 dev.off()
 # ggsave(filename = "output/LWPlot.png", plot = LWPlot)

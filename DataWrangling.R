@@ -5,6 +5,16 @@
 # Load useful lab functions
 source("LabFunctions.R")
 
+# default values for variables if script run separately
+if(!exists("StudyBackwater")){StudyBackwater <- "Yuma Cove backwater"}
+if(!exists("Sp")){Sp <- "XYTE"}
+if(!exists("SurvivalDAL")){SurvivalDAL <- 120}
+# Minimum TL for Size Class 2
+if(!exists("SizeClass2")){SizeClass2 <- 250}
+# Minimum TL for Size Class 3
+if(!exists("SizeClass3")){SizeClass3 <- 350}
+
+
 # Load data workspace or downlod and load if more than 7 days old
 if(file.exists("data/BWScanningIndex.RData")){
   data_info <- file.info("data/BWScanningIndex.RData")
@@ -51,7 +61,7 @@ packages(lubridate)
 # starting date.
 if(!exists("MinReleaseDate")){
   MinReleaseDate <-NFWGTable %>%
-    filter(Location == StudyBackwater, !is.na(StockingID)) %>%
+    filter(Location == StudyBackwater, Status == "Backwater release") %>%
     summarize(MaxCollectionDate = max(CollectionDate)) %>%
     pull(MaxCollectionDate) %>% as.Date()
 }
