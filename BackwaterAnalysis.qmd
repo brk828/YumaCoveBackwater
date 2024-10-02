@@ -8,22 +8,22 @@ echo: false
 #| warning: false
 # Before rendering document declare the backwater you are interested in
 
-StudyBackwater <- "IPCA (Pond 1)" # uncomment for IPCA Pond 1
+# StudyBackwater <- "IPCA (Pond 1)" # uncomment for IPCA Pond 1
 
 # StudyBackwater <- "IPCA (Pond 3)" # uncomment for IPCA Pond 3
 
 # StudyBackwater <- "IPCA (Pond 4)" # uncomment for IPCA Pond 4
 
-# StudyBackwater <- "Yuma Cove backwater" # uncomment for Yuma Cove backwater
+StudyBackwater <- "Yuma Cove backwater" # uncomment for Yuma Cove backwater
 
-SurvivalDAL <- 90 # Day cutoff for any post-stocking survival criteria
+SurvivalDAL <- 100 # Day cutoff for any post-stocking survival criteria
 Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback
 
 # The MinReleaseDate will be used as a a starting point to determine the 
 # initial stocking cohort (first stocking after this date) and all population
 # trajectories will start after this date.
 # If no date entered, the most recent stocking date will be used (details in DataWrangling.R)
-# MinReleaseDate <- as.Date("2013-01-01") 
+MinReleaseDate <- as.Date("2013-01-01") 
 
 # Any size class analysis will break fish into 3 size classes
 # Minimum TL for Size Class 2
@@ -53,7 +53,7 @@ This summary analysis for `r StudyBackwater` is auto-generated and results state
 
 Known survival analysis uses PIT scanning data to track the number of PIT tagged fish alive in the backwater on any given date. For a fish to be included in the total, it must have been tagged and release prior to the date (x-axis), and it must have been scanned at least once `r SurvivalDAL` days after it's release date. This avoids including fish that were scanned within a few days of tagging, but died before contributing significantly to the population. For example, a fish tagged and released on January 1, 2019 will be included in the known population total for every day after January 1, 2019 as long as it was scanned once after May 1, 2019. If it was never scanned again after May 5, 2019, then it will be a part of the known population from January 1, 2019 through May 5, 2019, and removed from the population for all subsequent dates.
 
-The initial stocking into `r StudyBackwater`  on `r InitialStockDate` consisted of `r InitialStockingS$Count[InitialStockingS$Sex == "F"]` females and `r InitialStockingS$Count[InitialStockingS$Sex == "M"]` males, but only `r sum(InitialKnownS$Count)` (`r InitialKnownS$Count[InitialKnownS$Sex == "F"]` females and `r InitialKnownS$Count[InitialKnownS$Sex == "M"]` males) survived to 120 days post-stocking based on PIT scanning data (@fig-SurvivalInitialRelease).  The stair step pattern of known survivors from the initial stocking is indicative of a dramatic decline in survivor numbers over summer months for both sexes.  Based on PIT scanning after the most recent spawning season (`r ifelse(month(Sys.Date()) > 9, year(Sys.Date()), year(Sys.Date())-1)`), the remaining known survivors from the initial stocking include `r RecentKnownS$Count[RecentKnownS$Sex == "F"]` females and `r RecentKnownS$Count[RecentKnownS$Sex == "M"]` males. This represents a mean annual survival of `r as.numeric(AnnualSurvival)*100`% over `r NumberOfYears` years.
+The initial stocking into `r StudyBackwater`  on `r InitialStockDate` consisted of `r InitialStockingS$Count[InitialStockingS$Sex == "F"]` females and `r InitialStockingS$Count[InitialStockingS$Sex == "M"]` males, but only `r sum(InitialKnownS$Count)` (`r InitialKnownS$Count[InitialKnownS$Sex == "F"]` females and `r InitialKnownS$Count[InitialKnownS$Sex == "M"]` males) survived to `r SurvivalDAL` days post-stocking based on PIT scanning data (@fig-SurvivalInitialRelease).  The stair step pattern of known survivors from the initial stocking is indicative of a dramatic decline in survivor numbers over summer months for both sexes.  Based on PIT scanning after the most recent spawning season (`r ifelse(month(Sys.Date()) > 9, year(Sys.Date()), year(Sys.Date())-1)`), the remaining known survivors from the initial stocking include `r RecentKnownS$Count[RecentKnownS$Sex == "F"]` females and `r RecentKnownS$Count[RecentKnownS$Sex == "M"]` males. This represents a mean annual survival of `r as.numeric(AnnualSurvival)*100`% over `r NumberOfYears` years.
 
 ```{r}
 #| label: fig-SurvivalInitialRelease
