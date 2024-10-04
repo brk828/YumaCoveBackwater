@@ -27,9 +27,9 @@ MinReleaseDate <- as.Date("2013-01-01")
 
 # Any size class analysis will break fish into 3 size classes
 # Minimum TL for Size Class 2
-SizeClass2 <- 250
+SizeClass2 <- 350
 # Minimum TL for Size Class 3
-SizeClass3 <- 350
+SizeClass3 <- 500
 
 source("DataWrangling.R")
 
