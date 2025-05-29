@@ -72,7 +72,7 @@ CrossDF <- SurvivalDates %>%
 KnownSurvival <- CrossDF %>% 
   filter(CollectionDate <= Date &
            LastScan >= Date) %>%
-  select(Date, PIT1, CollectionDate, SizeClass, Sex, TL, WT, Status, LastScan, MaxDAL) 
+  select(Date, PIT1, CollectionDate, SizeClass, Sex, TL, WT, Event, LastScan, MaxDAL) 
 
 rm(CrossDF)
 ################################################################################

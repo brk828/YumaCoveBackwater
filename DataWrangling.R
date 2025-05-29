@@ -3,7 +3,7 @@
 # this must be run from a script with input parameters included
 
 # Load useful lab functions
-source("LabFunctions.R")
+source("c:/GIT/RDependencies/LabFunctions.R")
 
 # default values for variables if script run separately
 if(!exists("StudyBackwater")){StudyBackwater <- "Yuma Cove backwater"}
@@ -32,23 +32,23 @@ if(file.exists("data/BWScanningIndex.RData")){
 
 
 # Load data workspace or downlod and load if more than 7 days old
-if(file.exists("data/NFWGTable.RData")){
-  data_info <- file.info("data/NFWGTable.RData")
+if(file.exists("data/NFWGAnalysis.RData")){
+  data_info <- file.info("data/NFWGAnalysis.RData")
   data_date <- as.Date(data_info$mtime)
   if(data_date>Sys.Date() - 7){
-    load("data/NFWGTable.RData")
+    load("data/NFWGAnalysis.RData")
   } else {
     download_nfwg("data")
-    load("data/NFWGTable.RData")
+    load("data/NFWGAnalysis.RData")
   }
 } else {
   download_nfwg("data")
-  load("data/NFWGTable.RData")
+  load("data/NFWGAnalysis.RData")
 }
 
 # remove unnecessary functions
 rm(euclid, split_hourly, download_nfwg, download_basin, download_backwater, data_date, data_info,
-   Unit, TripTable, TagStocking, TagEffort, BWPITTwoBackwaters)
+   Unit, TripTable, BWPITTwoBackwaters)
 
 packages(ggplot2)
 packages(dplyr)     # data manipulation
@@ -60,9 +60,9 @@ packages(lubridate)
 # find the most recent stocking into the backwater to use as 
 # starting date.
 if(!exists("MinReleaseDate")){
-  MinReleaseDate <-NFWGTable %>%
-    filter(Location == StudyBackwater, Status == "Backwater release") %>%
-    summarize(MaxCollectionDate = max(CollectionDate)) %>%
+  MinReleaseDate <-NFWGAnalysis %>%
+    filter(location == StudyBackwater, event == "stocking") %>%
+    summarize(MaxCollectionDate = max(handling_date)) %>%
     pull(MaxCollectionDate) %>% as.Date()
 }
 
@@ -107,11 +107,12 @@ ContactLastBW <- ContactsBW %>%
 
 # Clean up table, add size classes, create event and disposition fields for future NFWG table structure,
 # and add a recapture field based on actual previous records instead of relying on database classification
-NFWGTableBW <- NFWGTable %>% 
-  left_join(LocationTable %>% select(LID, Complex), by = "LID") %>%
-  mutate(Backwater = ifelse(is.na(Complex), Location, Complex)) %>%
-  select(Backwater, CollectionDate, PIT1 = First134PIT, PIT2 = Second134PIT, Species, 
-         Sex, TL, WT, Status, Method) %>%
+NFWGTableBW <- NFWGAnalysis %>% 
+  left_join(LocationTable %>% select(LID, Complex), by = c("location_id" = "LID")) %>%
+  mutate(Backwater = ifelse(is.na(Complex), location, Complex)) %>%
+  select(Backwater, CollectionDate = handling_date, 
+         PIT1 = pit1, PIT2 = pit2, Species = species, Method = primary_method,
+         Sex = sex, TL = total_length, WT = weight, event, disposition) %>%
   filter(Species == Sp, Backwater == StudyBackwater, CollectionDate>=MinReleaseDate) %>%
   mutate(CollectionDate = as.Date(CollectionDate, format = "%Y-%m-%d"), 
          Month = month(CollectionDate), 
@@ -120,8 +121,8 @@ NFWGTableBW <- NFWGTable %>%
            TL < SizeClass2 ~ 1,
            TL >= SizeClass2 & TL < SizeClass3 ~ 2,
            TL >= SizeClass3 ~ 3),
-         Event = ifelse(Status == "Backwater release", "Stocking", "Capture"),
-         Disposition = "Released") %>%
+         Event = event,
+         Disposition = disposition) %>%
   arrange(PIT1, CollectionDate) %>%
   group_by(PIT1) %>%
   mutate(Recapture = ifelse(row_number() > 1, "Y", "N")) %>%
@@ -131,7 +132,7 @@ NFWGTableBW <- NFWGTable %>%
 
 # Add month names for graphing and tables
 NFWGTableBW$MonthName <- month.name[NFWGTableBW$Month]
-rm(NFWGTable, LocationTable)
+rm(NFWGAnalysis, LocationTable)
 
 # All records from ContactLastBW should match a first capture record in the NFWG table
 if(nrow(NFWGTableBW %>% filter(Recapture == "N", !is.na(LastScan))) - nrow(ContactLastBW)!=0) {

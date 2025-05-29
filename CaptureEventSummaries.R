@@ -19,7 +19,7 @@ packages(gt)
 # Create a table that represents "adult" fish captured during sampling events
 # SizeClass 2 or greater
 Size2PlusPivot <- NFWGTableBW %>%
-  filter(Event == "Capture", SizeClass > 1) %>%
+  filter(Event == "capture", SizeClass > 1) %>%
   arrange(Year, Month) %>%
   group_by(Year, MonthName, Month, Recapture) %>%
   summarise(Count = n()) %>%
@@ -48,7 +48,7 @@ gtsave(Size2GT, paste0("output/AdultRecaptureProportion ", StudyBackwater, ".htm
 # This dataframe pulls PITs from the last sample for each year
 # used by other script to estimate total population
 Size2PlusAutumn <- NFWGTableBW %>%
-  filter(Event == "Capture", SizeClass > 1) %>%
+  filter(Event == "capture", SizeClass > 1) %>%
   inner_join(LastMonth, by = c("Year" = "Year", "Month" = "Month")) %>%
   group_by(Year, PIT1) %>%
     summarise(Recapture = min(Recapture), Contacts = n()) %>%

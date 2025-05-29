@@ -16,7 +16,7 @@ echo: false
 
 StudyBackwater <- "Yuma Cove backwater" # uncomment for Yuma Cove backwater
 
-SurvivalDAL <- 100 # Day cutoff for any post-stocking survival criteria
+SurvivalDAL <- 60 # Day cutoff for any post-stocking survival criteria
 Sp <- "XYTE" # Species of interest GIEL - bonytail, XYTE - razorback
 
 # The MinReleaseDate will be used as a a starting point to determine the 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,10 +30,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="BackwaterAnalysis_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="BackwaterAnalysis_files/libs/quarto-html/anchor.min.js"></script>
 <link href="BackwaterAnalysis_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="BackwaterAnalysis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="BackwaterAnalysis_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="BackwaterAnalysis_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="BackwaterAnalysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="BackwaterAnalysis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="BackwaterAnalysis_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -65,69 +65,87 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This summary analysis for Yuma Cove backwater is auto-generated and results stated within should be considered preliminary. These results are based on an analysis of stocking, capture, and PIT scanning records starting on 2013-01-01 and ending on 2024-08-02. Several approaches are used to assess the overall status of the population in the backwater. Known survival analysis provides a detailed fish by fish accounting of the fish that are known to be alive in the backwater based on PIT scanning. In backwaters with nearly continuous PIT scanning, these known survivor numbers should be no less than 95% of the actual PIT tagged population, as all fish are provided at a minimum 100 days of PIT scanning regardless of tagging date. Backwater sampling events are used to evaluate recruitment, size class distribution, and proportion of tagged to untagged fish in the backwater. The tagged to untagged proportion is used in conjunction with the known survival analysis to provide point estimates of the adult population size. The biomass of the most recent sampling event is estimated based on capture records and a length-weight relationship established from all backwater capture data. Any reduction of biomass through harvest or mortality is assessed through PIT scanning conducted after the most recent autumn harvest.</p>
+<p>This summary analysis for Yuma Cove backwater is auto-generated and results stated within should be considered preliminary. These results are based on an analysis of stocking, capture, and PIT scanning records starting on 2013-01-01 and ending on 2025-04-25. Several approaches are used to assess the overall status of the population in the backwater. Known survival analysis provides a detailed fish by fish accounting of the fish that are known to be alive in the backwater based on PIT scanning. In backwaters with nearly continuous PIT scanning, these known survivor numbers should be no less than 95% of the actual PIT tagged population, as all fish are provided at a minimum 60 days of PIT scanning regardless of tagging date. Backwater sampling events are used to evaluate recruitment, size class distribution, and proportion of tagged to untagged fish in the backwater. The tagged to untagged proportion is used in conjunction with the known survival analysis to provide point estimates of the adult population size. The biomass of the most recent sampling event is estimated based on capture records and a length-weight relationship established from all backwater capture data. Any reduction of biomass through harvest or mortality is assessed through PIT scanning conducted after the most recent autumn harvest.</p>
 </section>
 <section id="known-survival" class="level2">
 <h2 class="anchored" data-anchor-id="known-survival">Known Survival</h2>
-<p>Known survival analysis uses PIT scanning data to track the number of PIT tagged fish alive in the backwater on any given date. For a fish to be included in the total, it must have been tagged and release prior to the date (x-axis), and it must have been scanned at least once 100 days after it’s release date. This avoids including fish that were scanned within a few days of tagging, but died before contributing significantly to the population. For example, a fish tagged and released on January 1, 2019 will be included in the known population total for every day after January 1, 2019 as long as it was scanned once after May 1, 2019. If it was never scanned again after May 5, 2019, then it will be a part of the known population from January 1, 2019 through May 5, 2019, and removed from the population for all subsequent dates.</p>
-<p>The initial stocking into Yuma Cove backwater on 2013-02-11 consisted of 100 females and 100 males, but only 104 (80 females and 24 males) survived to 100 days post-stocking based on PIT scanning data (<a href="#fig-SurvivalInitialRelease">Figure&nbsp;1</a>). The stair step pattern of known survivors from the initial stocking is indicative of a dramatic decline in survivor numbers over summer months for both sexes. Based on PIT scanning after the most recent spawning season (2024), the remaining known survivors from the initial stocking include females and males. This represents a mean annual survival of 0% over 12 years.</p>
+<p>Known survival analysis uses PIT scanning data to track the number of PIT tagged fish alive in the backwater on any given date. For a fish to be included in the total, it must have been tagged and release prior to the date (x-axis), and it must have been scanned at least once 60 days after it’s release date. This avoids including fish that were scanned within a few days of tagging, but died before contributing significantly to the population. For example, a fish tagged and released on January 1, 2019 will be included in the known population total for every day after January 1, 2019 as long as it was scanned once after May 1, 2019. If it was never scanned again after May 5, 2019, then it will be a part of the known population from January 1, 2019 through May 5, 2019, and removed from the population for all subsequent dates.</p>
+<p>The initial stocking into Yuma Cove backwater on 2013-02-11 consisted of 100 females and 100 males, but only 111 (81 females and 30 males) survived to 60 days post-stocking based on PIT scanning data (<a href="#fig-SurvivalInitialRelease" class="quarto-xref">Figure&nbsp;1</a>). The stair step pattern of known survivors from the initial stocking is indicative of a dramatic decline in survivor numbers over summer months for both sexes. Based on PIT scanning after the most recent spawning season (2024), the remaining known survivors from the initial stocking include 4 females and 2 males. This represents a mean annual survival of 78.4% over 12 years.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-SurvivalInitialRelease" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="BackwaterAnalysis_files/figure-html/fig-SurvivalInitialRelease-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Initial stocking known survivors over time by sex.</figcaption>
+<div id="fig-SurvivalInitialRelease" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SurvivalInitialRelease-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BackwaterAnalysis_files/figure-html/fig-SurvivalInitialRelease-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SurvivalInitialRelease-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Initial stocking known survivors over time by sex.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>When all tagged fish are included in the known population analysis, increases to the number of known survivors are possible due to the tagging and survival of naturally recruited fish or fish from supplemental stocking (<a href="#fig-SurvivalPlotSex">Figure&nbsp;2</a> and <a href="#fig-SurvivalPlotTotal">Figure&nbsp;3</a>). Most fish captured, tagged, and released were given juvenile or unknown sex designations. The proportion of fish with unknown sex therefore increased over time, whereas juvenile fish rarely survived long enough to be added to the known survivors count (<a href="#fig-SurvivalPlotSex">Figure&nbsp;2</a>).</p>
+<p>When all tagged fish are included in the known population analysis, increases to the number of known survivors are possible due to the tagging and survival of naturally recruited fish or fish from supplemental stocking (<a href="#fig-SurvivalPlotSex" class="quarto-xref">Figure&nbsp;2</a> and <a href="#fig-SurvivalPlotTotal" class="quarto-xref">Figure&nbsp;3</a>). Most fish captured, tagged, and released were given juvenile or unknown sex designations. The proportion of fish with unknown sex therefore increased over time, whereas juvenile fish rarely survived long enough to be added to the known survivors count (<a href="#fig-SurvivalPlotSex" class="quarto-xref">Figure&nbsp;2</a>).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-SurvivalPlotSex" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="BackwaterAnalysis_files/figure-html/fig-SurvivalPlotSex-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Known survivors over time by sex.</figcaption>
+<div id="fig-SurvivalPlotSex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SurvivalPlotSex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BackwaterAnalysis_files/figure-html/fig-SurvivalPlotSex-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SurvivalPlotSex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Known survivors over time by sex.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-SurvivalPlotTotal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="BackwaterAnalysis_files/figure-html/fig-SurvivalPlotTotal-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Known survivors over time.</figcaption>
+<div id="fig-SurvivalPlotTotal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SurvivalPlotTotal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BackwaterAnalysis_files/figure-html/fig-SurvivalPlotTotal-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SurvivalPlotTotal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Known survivors over time.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The most recent count (PIT scanning after March of 2025) of known survivors in Yuma Cove backwater is 0 fish (<a href="#tbl-CurrentKnownGT">Table&nbsp;1</a>). The survivors tagging history is a combination of stocking and tagging events conducted in the backwater since the original stocking in 2013. Mean TL is the mean total length recorded of all known survivors at tagging.</p>
+<p>The most recent count (PIT scanning after March of 2025) of known survivors in Yuma Cove backwater is 90 fish (<a href="#tbl-CurrentKnownGT" class="quarto-xref">Table&nbsp;1</a>). The survivors tagging history is a combination of stocking and tagging events conducted in the backwater since the original stocking in 2013. Mean TL is the mean total length recorded of all known survivors at tagging.</p>
 <div class="cell">
+<div id="tbl-CurrentKnownGT" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-CurrentKnownGT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Current known survivors tagging history.
+</figcaption>
+<div aria-describedby="tbl-CurrentKnownGT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-CurrentKnownGT" class="anchored">
-
-<div id="tapuzklnxe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tapuzklnxe table {
+<div id="qtfmdybzzo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qtfmdybzzo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tapuzklnxe thead, #tapuzklnxe tbody, #tapuzklnxe tfoot, #tapuzklnxe tr, #tapuzklnxe td, #tapuzklnxe th {
+#qtfmdybzzo thead, #qtfmdybzzo tbody, #qtfmdybzzo tfoot, #qtfmdybzzo tr, #qtfmdybzzo td, #qtfmdybzzo th {
   border-style: none;
 }
 
-#tapuzklnxe p {
+#qtfmdybzzo p {
   margin: 0;
   padding: 0;
 }
 
-#tapuzklnxe .gt_table {
+#qtfmdybzzo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -153,12 +171,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_caption {
+#qtfmdybzzo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tapuzklnxe .gt_title {
+#qtfmdybzzo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -170,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#tapuzklnxe .gt_subtitle {
+#qtfmdybzzo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -182,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#tapuzklnxe .gt_heading {
+#qtfmdybzzo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -194,13 +212,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_bottom_border {
+#qtfmdybzzo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_col_headings {
+#qtfmdybzzo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -215,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_col_heading {
+#qtfmdybzzo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -235,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#tapuzklnxe .gt_column_spanner_outer {
+#qtfmdybzzo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -247,15 +265,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#tapuzklnxe .gt_column_spanner_outer:first-child {
+#qtfmdybzzo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tapuzklnxe .gt_column_spanner_outer:last-child {
+#qtfmdybzzo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tapuzklnxe .gt_column_spanner {
+#qtfmdybzzo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -267,11 +285,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#tapuzklnxe .gt_spanner_row {
+#qtfmdybzzo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tapuzklnxe .gt_group_heading {
+#qtfmdybzzo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -297,7 +315,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#tapuzklnxe .gt_empty_group_heading {
+#qtfmdybzzo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -312,15 +330,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#tapuzklnxe .gt_from_md > :first-child {
+#qtfmdybzzo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tapuzklnxe .gt_from_md > :last-child {
+#qtfmdybzzo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tapuzklnxe .gt_row {
+#qtfmdybzzo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -339,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#tapuzklnxe .gt_stub {
+#qtfmdybzzo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -352,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#tapuzklnxe .gt_stub_row_group {
+#qtfmdybzzo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,15 +384,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#tapuzklnxe .gt_row_group_first td {
+#qtfmdybzzo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tapuzklnxe .gt_row_group_first th {
+#qtfmdybzzo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tapuzklnxe .gt_summary_row {
+#qtfmdybzzo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -384,16 +402,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#tapuzklnxe .gt_first_summary_row {
+#qtfmdybzzo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_first_summary_row.thick {
+#qtfmdybzzo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tapuzklnxe .gt_last_summary_row {
+#qtfmdybzzo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -403,7 +421,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_grand_summary_row {
+#qtfmdybzzo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -413,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#tapuzklnxe .gt_first_grand_summary_row {
+#qtfmdybzzo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,7 +441,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_last_grand_summary_row_top {
+#qtfmdybzzo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -433,11 +451,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_striped {
+#qtfmdybzzo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tapuzklnxe .gt_table_body {
+#qtfmdybzzo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -446,7 +464,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_footnotes {
+#qtfmdybzzo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -460,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_footnote {
+#qtfmdybzzo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -469,7 +487,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#tapuzklnxe .gt_sourcenotes {
+#qtfmdybzzo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -483,7 +501,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#tapuzklnxe .gt_sourcenote {
+#qtfmdybzzo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -491,117 +509,298 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#tapuzklnxe .gt_left {
+#qtfmdybzzo .gt_left {
   text-align: left;
 }
 
-#tapuzklnxe .gt_center {
+#qtfmdybzzo .gt_center {
   text-align: center;
 }
 
-#tapuzklnxe .gt_right {
+#qtfmdybzzo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tapuzklnxe .gt_font_normal {
+#qtfmdybzzo .gt_font_normal {
   font-weight: normal;
 }
 
-#tapuzklnxe .gt_font_bold {
+#qtfmdybzzo .gt_font_bold {
   font-weight: bold;
 }
 
-#tapuzklnxe .gt_font_italic {
+#qtfmdybzzo .gt_font_italic {
   font-style: italic;
 }
 
-#tapuzklnxe .gt_super {
+#qtfmdybzzo .gt_super {
   font-size: 65%;
 }
 
-#tapuzklnxe .gt_footnote_marks {
+#qtfmdybzzo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tapuzklnxe .gt_asterisk {
+#qtfmdybzzo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tapuzklnxe .gt_indent_1 {
+#qtfmdybzzo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tapuzklnxe .gt_indent_2 {
+#qtfmdybzzo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tapuzklnxe .gt_indent_3 {
+#qtfmdybzzo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tapuzklnxe .gt_indent_4 {
+#qtfmdybzzo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tapuzklnxe .gt_indent_5 {
+#qtfmdybzzo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tapuzklnxe .katex-display {
+#qtfmdybzzo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tapuzklnxe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qtfmdybzzo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;1:  <p>Current known survivors tagging history.</p> </caption>
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Event">Event</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Year">Year</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Month">Month</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="TL (mm)">TL (mm)</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body"></tbody>
-  
-  
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Event" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Event</th>
+<th id="Year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Year</th>
+<th id="Month" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Month</th>
+<th id="TL-(mm)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">TL (mm)</th>
+<th id="M" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">M</th>
+<th id="F" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">F</th>
+<th id="U" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">U</th>
+<th id="J" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">J</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">stocking</td>
+<td class="gt_row gt_right" headers="Year">2013</td>
+<td class="gt_row gt_left" headers="Month">February</td>
+<td class="gt_row gt_right" headers="TL (mm)">393</td>
+<td class="gt_row gt_right" headers="M">2</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">stocking</td>
+<td class="gt_row gt_right" headers="Year">2013</td>
+<td class="gt_row gt_left" headers="Month">February</td>
+<td class="gt_row gt_right" headers="TL (mm)">417</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">4</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">stocking</td>
+<td class="gt_row gt_right" headers="Year">2015</td>
+<td class="gt_row gt_left" headers="Month">January</td>
+<td class="gt_row gt_right" headers="TL (mm)">435</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">1</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">stocking</td>
+<td class="gt_row gt_right" headers="Year">2020</td>
+<td class="gt_row gt_left" headers="Month">February</td>
+<td class="gt_row gt_right" headers="TL (mm)">361</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">3</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2015</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="TL (mm)">425</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">24</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2016</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="TL (mm)">480</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">1</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2016</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="TL (mm)">450</td>
+<td class="gt_row gt_right" headers="M">2</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2016</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="TL (mm)">451</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">4</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2017</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="TL (mm)">477</td>
+<td class="gt_row gt_right" headers="M">4</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2017</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="TL (mm)">367</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">11</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2017</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="TL (mm)">530</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">1</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2020</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="TL (mm)">473</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">14</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2020</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="TL (mm)">494</td>
+<td class="gt_row gt_right" headers="M">1</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2021</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="TL (mm)">507</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">11</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2022</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="TL (mm)">540</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">4</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2023</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="TL (mm)">338</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">0</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Event">capture</td>
+<td class="gt_row gt_right" headers="Year">2023</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="TL (mm)">496</td>
+<td class="gt_row gt_right" headers="M">0</td>
+<td class="gt_row gt_right" headers="F">1</td>
+<td class="gt_row gt_right" headers="U">0</td>
+<td class="gt_row gt_right" headers="J">0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
+</div>
+</figure>
 </div>
 </div>
 </section>
 <section id="backwater-sampling-events" class="level2">
 <h2 class="anchored" data-anchor-id="backwater-sampling-events">Backwater Sampling Events</h2>
-<p>Sampling events in Yuma Cove backwater have resulted in the capture and tagging of 2657 fish (<a href="#tbl-SizeClassGT">Table&nbsp;2</a>). Most fish captured were small and did not survive long enough to contribute to the overall spawning population. To separate the small fish unlikely to contribute to the adult spawning population from the larger subadult to adult fish, all captured fish were broken down into three size classes based on the TL at capture; 1 &lt;350, 2 &gt;=350 and &lt;500, 3 &gt;=500 mm TL.</p>
+<p>Sampling events in Yuma Cove backwater have resulted in the capture and tagging of 0 fish (<a href="#tbl-SizeClassGT" class="quarto-xref">Table&nbsp;2</a>). Most fish captured were small and did not survive long enough to contribute to the overall spawning population. To separate the small fish unlikely to contribute to the adult spawning population from the larger subadult to adult fish, all captured fish were broken down into three size classes based on the TL at capture; 1 &lt;350, 2 &gt;=350 and &lt;500, 3 &gt;=500 mm TL.</p>
 <div class="cell">
+<div id="tbl-SizeClassGT" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-SizeClassGT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Capture summary by size class.
+</figcaption>
+<div aria-describedby="tbl-SizeClassGT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-SizeClassGT" class="anchored">
-
-<div id="shnhrqduxd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#shnhrqduxd table {
+<div id="bcvswffzbr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bcvswffzbr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#shnhrqduxd thead, #shnhrqduxd tbody, #shnhrqduxd tfoot, #shnhrqduxd tr, #shnhrqduxd td, #shnhrqduxd th {
+#bcvswffzbr thead, #bcvswffzbr tbody, #bcvswffzbr tfoot, #bcvswffzbr tr, #bcvswffzbr td, #bcvswffzbr th {
   border-style: none;
 }
 
-#shnhrqduxd p {
+#bcvswffzbr p {
   margin: 0;
   padding: 0;
 }
 
-#shnhrqduxd .gt_table {
+#bcvswffzbr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -627,12 +826,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_caption {
+#bcvswffzbr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#shnhrqduxd .gt_title {
+#bcvswffzbr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -644,7 +843,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#shnhrqduxd .gt_subtitle {
+#bcvswffzbr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -656,7 +855,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#shnhrqduxd .gt_heading {
+#bcvswffzbr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -668,13 +867,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_bottom_border {
+#bcvswffzbr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_col_headings {
+#bcvswffzbr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -689,7 +888,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_col_heading {
+#bcvswffzbr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -709,7 +908,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#shnhrqduxd .gt_column_spanner_outer {
+#bcvswffzbr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,15 +920,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#shnhrqduxd .gt_column_spanner_outer:first-child {
+#bcvswffzbr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#shnhrqduxd .gt_column_spanner_outer:last-child {
+#bcvswffzbr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#shnhrqduxd .gt_column_spanner {
+#bcvswffzbr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -741,11 +940,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#shnhrqduxd .gt_spanner_row {
+#bcvswffzbr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#shnhrqduxd .gt_group_heading {
+#bcvswffzbr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -771,7 +970,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#shnhrqduxd .gt_empty_group_heading {
+#bcvswffzbr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -786,15 +985,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#shnhrqduxd .gt_from_md > :first-child {
+#bcvswffzbr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#shnhrqduxd .gt_from_md > :last-child {
+#bcvswffzbr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#shnhrqduxd .gt_row {
+#bcvswffzbr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -813,7 +1012,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#shnhrqduxd .gt_stub {
+#bcvswffzbr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -826,7 +1025,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#shnhrqduxd .gt_stub_row_group {
+#bcvswffzbr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -840,15 +1039,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#shnhrqduxd .gt_row_group_first td {
+#bcvswffzbr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#shnhrqduxd .gt_row_group_first th {
+#bcvswffzbr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#shnhrqduxd .gt_summary_row {
+#bcvswffzbr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -858,16 +1057,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#shnhrqduxd .gt_first_summary_row {
+#bcvswffzbr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_first_summary_row.thick {
+#bcvswffzbr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#shnhrqduxd .gt_last_summary_row {
+#bcvswffzbr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -877,7 +1076,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_grand_summary_row {
+#bcvswffzbr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -887,7 +1086,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#shnhrqduxd .gt_first_grand_summary_row {
+#bcvswffzbr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -897,7 +1096,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_last_grand_summary_row_top {
+#bcvswffzbr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -907,11 +1106,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_striped {
+#bcvswffzbr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#shnhrqduxd .gt_table_body {
+#bcvswffzbr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -920,7 +1119,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_footnotes {
+#bcvswffzbr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -934,7 +1133,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_footnote {
+#bcvswffzbr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -943,7 +1142,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#shnhrqduxd .gt_sourcenotes {
+#bcvswffzbr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -957,7 +1156,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#shnhrqduxd .gt_sourcenote {
+#bcvswffzbr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -965,191 +1164,134 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#shnhrqduxd .gt_left {
+#bcvswffzbr .gt_left {
   text-align: left;
 }
 
-#shnhrqduxd .gt_center {
+#bcvswffzbr .gt_center {
   text-align: center;
 }
 
-#shnhrqduxd .gt_right {
+#bcvswffzbr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#shnhrqduxd .gt_font_normal {
+#bcvswffzbr .gt_font_normal {
   font-weight: normal;
 }
 
-#shnhrqduxd .gt_font_bold {
+#bcvswffzbr .gt_font_bold {
   font-weight: bold;
 }
 
-#shnhrqduxd .gt_font_italic {
+#bcvswffzbr .gt_font_italic {
   font-style: italic;
 }
 
-#shnhrqduxd .gt_super {
+#bcvswffzbr .gt_super {
   font-size: 65%;
 }
 
-#shnhrqduxd .gt_footnote_marks {
+#bcvswffzbr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#shnhrqduxd .gt_asterisk {
+#bcvswffzbr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#shnhrqduxd .gt_indent_1 {
+#bcvswffzbr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#shnhrqduxd .gt_indent_2 {
+#bcvswffzbr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#shnhrqduxd .gt_indent_3 {
+#bcvswffzbr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#shnhrqduxd .gt_indent_4 {
+#bcvswffzbr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#shnhrqduxd .gt_indent_5 {
+#bcvswffzbr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#shnhrqduxd .katex-display {
+#bcvswffzbr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#shnhrqduxd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bcvswffzbr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;2:  <p>Capture summary by size class.</p> </caption>
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="Year">Year</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id="Month">Month</th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="Size class">
-        <span class="gt_column_spanner">Size class</span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="1">1</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="2">2</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="3">3</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Year" class="gt_row gt_right">2013</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="1" class="gt_row gt_right">48</td>
-<td headers="2" class="gt_row gt_right">33</td>
-<td headers="3" class="gt_row gt_right">56</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2014</td>
-<td headers="Month" class="gt_row gt_left">January</td>
-<td headers="1" class="gt_row gt_right">3</td>
-<td headers="2" class="gt_row gt_right">4</td>
-<td headers="3" class="gt_row gt_right">6</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2014</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="1" class="gt_row gt_right">0</td>
-<td headers="2" class="gt_row gt_right">15</td>
-<td headers="3" class="gt_row gt_right">59</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2015</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="1" class="gt_row gt_right">0</td>
-<td headers="2" class="gt_row gt_right">152</td>
-<td headers="3" class="gt_row gt_right">14</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2016</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="1" class="gt_row gt_right">0</td>
-<td headers="2" class="gt_row gt_right">83</td>
-<td headers="3" class="gt_row gt_right">17</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2016</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="1" class="gt_row gt_right">113</td>
-<td headers="2" class="gt_row gt_right">23</td>
-<td headers="3" class="gt_row gt_right">4</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2017</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="1" class="gt_row gt_right">3</td>
-<td headers="2" class="gt_row gt_right">14</td>
-<td headers="3" class="gt_row gt_right">2</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2017</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="1" class="gt_row gt_right">40</td>
-<td headers="2" class="gt_row gt_right">56</td>
-<td headers="3" class="gt_row gt_right">35</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2018</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="1" class="gt_row gt_right">484</td>
-<td headers="2" class="gt_row gt_right">24</td>
-<td headers="3" class="gt_row gt_right">14</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2019</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="1" class="gt_row gt_right">10</td>
-<td headers="2" class="gt_row gt_right">45</td>
-<td headers="3" class="gt_row gt_right">34</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2020</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="1" class="gt_row gt_right">230</td>
-<td headers="2" class="gt_row gt_right">66</td>
-<td headers="3" class="gt_row gt_right">46</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2021</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="1" class="gt_row gt_right">245</td>
-<td headers="2" class="gt_row gt_right">30</td>
-<td headers="3" class="gt_row gt_right">35</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2022</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="1" class="gt_row gt_right">284</td>
-<td headers="2" class="gt_row gt_right">17</td>
-<td headers="3" class="gt_row gt_right">27</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2023</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="1" class="gt_row gt_right">266</td>
-<td headers="2" class="gt_row gt_right">7</td>
-<td headers="3" class="gt_row gt_right">13</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
-</div>
-</div>
-<p>Size Class 3 fish were assumed to all be adults, whereas size class 2 fish were assumed to be a mix of subadult and adult fish at the time of capture. Both size classes together made up the entirety of the potential spawning population. Although some size class 2 fish were immature at capture, they had a similar survival profile to size class 3, and were likely to mature a year or two following their tagging and release. The proportion of potential spawning fish (size class 2+) that were recaptures (captured with a tag) were assumed to represent the proportion of the total potential spawning population that was PIT tagged within the backwater (<a href="#tbl-Size2GT">Table&nbsp;3</a>).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="tbl-Size2GT" class="anchored">
 
-<div id="pwbehkxock" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pwbehkxock table {
+<table class="gt_table do-not-create-environment cell caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="Year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Year</th>
+<th rowspan="2" id="Month" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Month</th>
+<th colspan="3" id="Size class" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Size class
+</div></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="a1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">1</th>
+<th id="a2" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">2</th>
+<th id="a3" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">3</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Size Class 3 fish were assumed to all be adults, whereas size class 2 fish were assumed to be a mix of subadult and adult fish at the time of capture. Both size classes together made up the entirety of the potential spawning population. Although some size class 2 fish were immature at capture, they had a similar survival profile to size class 3, and were likely to mature a year or two following their tagging and release. The proportion of potential spawning fish (size class 2+) that were recaptures (captured with a tag) were assumed to represent the proportion of the total potential spawning population that was PIT tagged within the backwater (<a href="#tbl-Size2GT" class="quarto-xref">Table&nbsp;3</a>).</p>
+<div class="cell">
+<div id="tbl-Size2GT" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Size2GT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Recapture status for size class 2+.
+</figcaption>
+<div aria-describedby="tbl-Size2GT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="fvfdrcftyi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fvfdrcftyi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pwbehkxock thead, #pwbehkxock tbody, #pwbehkxock tfoot, #pwbehkxock tr, #pwbehkxock td, #pwbehkxock th {
+#fvfdrcftyi thead, #fvfdrcftyi tbody, #fvfdrcftyi tfoot, #fvfdrcftyi tr, #fvfdrcftyi td, #fvfdrcftyi th {
   border-style: none;
 }
 
-#pwbehkxock p {
+#fvfdrcftyi p {
   margin: 0;
   padding: 0;
 }
 
-#pwbehkxock .gt_table {
+#fvfdrcftyi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1175,12 +1317,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_caption {
+#fvfdrcftyi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pwbehkxock .gt_title {
+#fvfdrcftyi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1192,7 +1334,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#pwbehkxock .gt_subtitle {
+#fvfdrcftyi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1204,7 +1346,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#pwbehkxock .gt_heading {
+#fvfdrcftyi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1216,13 +1358,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_bottom_border {
+#fvfdrcftyi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_col_headings {
+#fvfdrcftyi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1237,7 +1379,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_col_heading {
+#fvfdrcftyi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1257,7 +1399,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#pwbehkxock .gt_column_spanner_outer {
+#fvfdrcftyi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1269,15 +1411,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#pwbehkxock .gt_column_spanner_outer:first-child {
+#fvfdrcftyi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pwbehkxock .gt_column_spanner_outer:last-child {
+#fvfdrcftyi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pwbehkxock .gt_column_spanner {
+#fvfdrcftyi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1289,11 +1431,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#pwbehkxock .gt_spanner_row {
+#fvfdrcftyi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pwbehkxock .gt_group_heading {
+#fvfdrcftyi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1319,7 +1461,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#pwbehkxock .gt_empty_group_heading {
+#fvfdrcftyi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1334,15 +1476,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#pwbehkxock .gt_from_md > :first-child {
+#fvfdrcftyi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pwbehkxock .gt_from_md > :last-child {
+#fvfdrcftyi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pwbehkxock .gt_row {
+#fvfdrcftyi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1361,7 +1503,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#pwbehkxock .gt_stub {
+#fvfdrcftyi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1374,7 +1516,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#pwbehkxock .gt_stub_row_group {
+#fvfdrcftyi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1388,15 +1530,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#pwbehkxock .gt_row_group_first td {
+#fvfdrcftyi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pwbehkxock .gt_row_group_first th {
+#fvfdrcftyi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pwbehkxock .gt_summary_row {
+#fvfdrcftyi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1406,16 +1548,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#pwbehkxock .gt_first_summary_row {
+#fvfdrcftyi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_first_summary_row.thick {
+#fvfdrcftyi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pwbehkxock .gt_last_summary_row {
+#fvfdrcftyi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1425,7 +1567,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_grand_summary_row {
+#fvfdrcftyi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1435,7 +1577,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#pwbehkxock .gt_first_grand_summary_row {
+#fvfdrcftyi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1445,7 +1587,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_last_grand_summary_row_top {
+#fvfdrcftyi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1455,11 +1597,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_striped {
+#fvfdrcftyi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pwbehkxock .gt_table_body {
+#fvfdrcftyi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1468,7 +1610,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_footnotes {
+#fvfdrcftyi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1482,7 +1624,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_footnote {
+#fvfdrcftyi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1491,7 +1633,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#pwbehkxock .gt_sourcenotes {
+#fvfdrcftyi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1505,7 +1647,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#pwbehkxock .gt_sourcenote {
+#fvfdrcftyi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1513,179 +1655,220 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#pwbehkxock .gt_left {
+#fvfdrcftyi .gt_left {
   text-align: left;
 }
 
-#pwbehkxock .gt_center {
+#fvfdrcftyi .gt_center {
   text-align: center;
 }
 
-#pwbehkxock .gt_right {
+#fvfdrcftyi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pwbehkxock .gt_font_normal {
+#fvfdrcftyi .gt_font_normal {
   font-weight: normal;
 }
 
-#pwbehkxock .gt_font_bold {
+#fvfdrcftyi .gt_font_bold {
   font-weight: bold;
 }
 
-#pwbehkxock .gt_font_italic {
+#fvfdrcftyi .gt_font_italic {
   font-style: italic;
 }
 
-#pwbehkxock .gt_super {
+#fvfdrcftyi .gt_super {
   font-size: 65%;
 }
 
-#pwbehkxock .gt_footnote_marks {
+#fvfdrcftyi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pwbehkxock .gt_asterisk {
+#fvfdrcftyi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pwbehkxock .gt_indent_1 {
+#fvfdrcftyi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pwbehkxock .gt_indent_2 {
+#fvfdrcftyi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pwbehkxock .gt_indent_3 {
+#fvfdrcftyi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pwbehkxock .gt_indent_4 {
+#fvfdrcftyi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pwbehkxock .gt_indent_5 {
+#fvfdrcftyi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pwbehkxock .katex-display {
+#fvfdrcftyi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pwbehkxock div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fvfdrcftyi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;3:  <p>Recapture status for size class 2+.</p> </caption>
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="Year">Year</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id="Month">Month</th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Recaptured">
-        <span class="gt_column_spanner">Recaptured</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="Proportion">Proportion</th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y">Y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="N">N</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Year" class="gt_row gt_right">2013</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="Y" class="gt_row gt_right">79</td>
-<td headers="N" class="gt_row gt_right">10</td>
-<td headers="Proportion" class="gt_row gt_right">0.888</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2014</td>
-<td headers="Month" class="gt_row gt_left">January</td>
-<td headers="Y" class="gt_row gt_right">9</td>
-<td headers="N" class="gt_row gt_right">1</td>
-<td headers="Proportion" class="gt_row gt_right">0.900</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2014</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="Y" class="gt_row gt_right">74</td>
-<td headers="N" class="gt_row gt_right">0</td>
-<td headers="Proportion" class="gt_row gt_right">1.000</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2015</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="Y" class="gt_row gt_right">42</td>
-<td headers="N" class="gt_row gt_right">124</td>
-<td headers="Proportion" class="gt_row gt_right">0.253</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2016</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="Y" class="gt_row gt_right">44</td>
-<td headers="N" class="gt_row gt_right">56</td>
-<td headers="Proportion" class="gt_row gt_right">0.440</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2016</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="Y" class="gt_row gt_right">14</td>
-<td headers="N" class="gt_row gt_right">13</td>
-<td headers="Proportion" class="gt_row gt_right">0.519</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2017</td>
-<td headers="Month" class="gt_row gt_left">May</td>
-<td headers="Y" class="gt_row gt_right">9</td>
-<td headers="N" class="gt_row gt_right">7</td>
-<td headers="Proportion" class="gt_row gt_right">0.562</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2017</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="Y" class="gt_row gt_right">36</td>
-<td headers="N" class="gt_row gt_right">55</td>
-<td headers="Proportion" class="gt_row gt_right">0.396</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2018</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="Y" class="gt_row gt_right">23</td>
-<td headers="N" class="gt_row gt_right">15</td>
-<td headers="Proportion" class="gt_row gt_right">0.605</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2019</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="Y" class="gt_row gt_right">37</td>
-<td headers="N" class="gt_row gt_right">42</td>
-<td headers="Proportion" class="gt_row gt_right">0.468</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2020</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="Y" class="gt_row gt_right">56</td>
-<td headers="N" class="gt_row gt_right">56</td>
-<td headers="Proportion" class="gt_row gt_right">0.500</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2021</td>
-<td headers="Month" class="gt_row gt_left">October</td>
-<td headers="Y" class="gt_row gt_right">40</td>
-<td headers="N" class="gt_row gt_right">25</td>
-<td headers="Proportion" class="gt_row gt_right">0.615</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2022</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="Y" class="gt_row gt_right">25</td>
-<td headers="N" class="gt_row gt_right">19</td>
-<td headers="Proportion" class="gt_row gt_right">0.568</td></tr>
-    <tr><td headers="Year" class="gt_row gt_right">2023</td>
-<td headers="Month" class="gt_row gt_left">November</td>
-<td headers="Y" class="gt_row gt_right">13</td>
-<td headers="N" class="gt_row gt_right">7</td>
-<td headers="Proportion" class="gt_row gt_right">0.650</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="Year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Year</th>
+<th rowspan="2" id="Month" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Month</th>
+<th colspan="2" id="Recaptured" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Recaptured
+</div></th>
+<th rowspan="2" id="Proportion" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Proportion</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Y" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Y</th>
+<th id="N" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">N</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2013</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="Y">79</td>
+<td class="gt_row gt_right" headers="N">10</td>
+<td class="gt_row gt_right" headers="Proportion">0.888</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2014</td>
+<td class="gt_row gt_left" headers="Month">January</td>
+<td class="gt_row gt_right" headers="Y">9</td>
+<td class="gt_row gt_right" headers="N">1</td>
+<td class="gt_row gt_right" headers="Proportion">0.900</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2014</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="Y">74</td>
+<td class="gt_row gt_right" headers="N">0</td>
+<td class="gt_row gt_right" headers="Proportion">1.000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2015</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="Y">42</td>
+<td class="gt_row gt_right" headers="N">124</td>
+<td class="gt_row gt_right" headers="Proportion">0.253</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2016</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="Y">44</td>
+<td class="gt_row gt_right" headers="N">56</td>
+<td class="gt_row gt_right" headers="Proportion">0.440</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2016</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="Y">14</td>
+<td class="gt_row gt_right" headers="N">13</td>
+<td class="gt_row gt_right" headers="Proportion">0.519</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2017</td>
+<td class="gt_row gt_left" headers="Month">May</td>
+<td class="gt_row gt_right" headers="Y">9</td>
+<td class="gt_row gt_right" headers="N">7</td>
+<td class="gt_row gt_right" headers="Proportion">0.562</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2017</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="Y">36</td>
+<td class="gt_row gt_right" headers="N">55</td>
+<td class="gt_row gt_right" headers="Proportion">0.396</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2018</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="Y">23</td>
+<td class="gt_row gt_right" headers="N">15</td>
+<td class="gt_row gt_right" headers="Proportion">0.605</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2019</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="Y">37</td>
+<td class="gt_row gt_right" headers="N">42</td>
+<td class="gt_row gt_right" headers="Proportion">0.468</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2020</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="Y">56</td>
+<td class="gt_row gt_right" headers="N">56</td>
+<td class="gt_row gt_right" headers="Proportion">0.500</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2021</td>
+<td class="gt_row gt_left" headers="Month">October</td>
+<td class="gt_row gt_right" headers="Y">40</td>
+<td class="gt_row gt_right" headers="N">25</td>
+<td class="gt_row gt_right" headers="Proportion">0.615</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2022</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="Y">25</td>
+<td class="gt_row gt_right" headers="N">19</td>
+<td class="gt_row gt_right" headers="Proportion">0.568</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2023</td>
+<td class="gt_row gt_left" headers="Month">November</td>
+<td class="gt_row gt_right" headers="Y">13</td>
+<td class="gt_row gt_right" headers="N">7</td>
+<td class="gt_row gt_right" headers="Proportion">0.650</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
+</div>
+</figure>
 </div>
 </div>
 </section>
 <section id="spawning-adult-population-size" class="level2">
 <h2 class="anchored" data-anchor-id="spawning-adult-population-size">Spawning Adult Population Size</h2>
-<p>The total spawning population (tagged and untagged) was estimated from the recapture proportion (of size class 2+ fish) for all years when there is a autumn or early winter (after September) capture event. The known survivors (<a href="#fig-BackwaterPopulation">Figure&nbsp;4</a>) for each year as of December 1st was divided by the autumn recapture proportion for the same year. The recaptures and total captures used to calculate recapture proportion were adjusted for fish that avoid detection or that were harvested during the capture event by removing fish captured but never scanned after the capture event. Population estimates were calculated for all years with an autumn sample of more than 10 total captures after adjustment. The 95% confidence intervals were derived from the binomial distribution based on the autumn capture values (trials = total captures, successes = recaptures).</p>
+<p>The total spawning population (tagged and untagged) was estimated from the recapture proportion (of size class 2+ fish) for all years when there is a autumn or early winter (after September) capture event. The known survivors (<a href="#fig-BackwaterPopulation" class="quarto-xref">Figure&nbsp;4</a>) for each year as of December 1st was divided by the autumn recapture proportion for the same year. The recaptures and total captures used to calculate recapture proportion were adjusted for fish that avoid detection or that were harvested during the capture event by removing fish captured but never scanned after the capture event. Population estimates were calculated for all years with an autumn sample of more than 10 total captures after adjustment. The 95% confidence intervals were derived from the binomial distribution based on the autumn capture values (trials = total captures, successes = recaptures).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-BackwaterPopulation" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="BackwaterAnalysis_files/figure-html/fig-BackwaterPopulation-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: Adult population estimates based on recapture proportion and known survivors.</figcaption>
+<div id="fig-BackwaterPopulation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BackwaterPopulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BackwaterAnalysis_files/figure-html/fig-BackwaterPopulation-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BackwaterPopulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Adult population estimates based on recapture proportion and known survivors.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1693,39 +1876,47 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="estimating-biomass" class="level2">
 <h2 class="anchored" data-anchor-id="estimating-biomass">Estimating Biomass</h2>
-<p>Total length (TL) and mass (g) have been recorded for 1988 fish in Yuma Cove backwater (<a href="#fig-LWPlot">Figure&nbsp;5</a>). The parameters of a length-weight relationship were estimated using maximum likelihood based on these records and was used to estimate mass for fish when TL was recorded but mass was not. One potential consequence of overcrowding in a backwater and subsequent resource limitation is that the length-weight relationship might change over time. However, this was not the in Yuma Cove backwater as the length-weight relationship was consistent regardless of year (<a href="#fig-LWPlot">Figure&nbsp;5</a>); most recent measurements in black.</p>
+<p>Total length (TL) and mass (g) have been recorded for 1988 fish in Yuma Cove backwater (<a href="#fig-LWPlot" class="quarto-xref">Figure&nbsp;5</a>). The parameters of a length-weight relationship were estimated using maximum likelihood based on these records and was used to estimate mass for fish when TL was recorded but mass was not. One potential consequence of overcrowding in a backwater and subsequent resource limitation is that the length-weight relationship might change over time. However, this was not the in Yuma Cove backwater as the length-weight relationship was consistent regardless of year (<a href="#fig-LWPlot" class="quarto-xref">Figure&nbsp;5</a>); most recent measurements in black.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-LWPlot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="BackwaterAnalysis_files/figure-html/fig-LWPlot-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Length-weight relationship based on all capture and release records.</figcaption>
+<div id="fig-LWPlot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-LWPlot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BackwaterAnalysis_files/figure-html/fig-LWPlot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-LWPlot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Length-weight relationship based on all capture and release records.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Total biomass of the most recent autumn sampling event 2023 was calculated in kilograms (kg) from individual mass as measured when available or mass estimates based on the length-weight relationship (<a href="#tbl-RecentBiomassGT">Table&nbsp;4</a>). Harvest and mortality reduced the available biomass post-sampling, and so the available biomass from surveyed fish was calculated based on recent PIT scanning (contacted at least once in the current year).</p>
+<p>Total biomass of the most recent autumn sampling event 2023 was calculated in kilograms (kg) from individual mass as measured when available or mass estimates based on the length-weight relationship (<a href="#tbl-RecentBiomassGT" class="quarto-xref">Table&nbsp;4</a>). Harvest and mortality reduced the available biomass post-sampling, and so the available biomass from surveyed fish was calculated based on recent PIT scanning (contacted at least once in the current year).</p>
 <div class="cell">
+<div id="tbl-RecentBiomassGT" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-RecentBiomassGT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Biomass estimate from recent autumn sample and surviving biomass from that sample based on PIT scanning.
+</figcaption>
+<div aria-describedby="tbl-RecentBiomassGT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-RecentBiomassGT" class="anchored">
-
-<div id="yrpejxfbzd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yrpejxfbzd table {
+<div id="pekjzivhyt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pekjzivhyt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yrpejxfbzd thead, #yrpejxfbzd tbody, #yrpejxfbzd tfoot, #yrpejxfbzd tr, #yrpejxfbzd td, #yrpejxfbzd th {
+#pekjzivhyt thead, #pekjzivhyt tbody, #pekjzivhyt tfoot, #pekjzivhyt tr, #pekjzivhyt td, #pekjzivhyt th {
   border-style: none;
 }
 
-#yrpejxfbzd p {
+#pekjzivhyt p {
   margin: 0;
   padding: 0;
 }
 
-#yrpejxfbzd .gt_table {
+#pekjzivhyt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1751,12 +1942,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_caption {
+#pekjzivhyt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yrpejxfbzd .gt_title {
+#pekjzivhyt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1768,7 +1959,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#yrpejxfbzd .gt_subtitle {
+#pekjzivhyt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1780,7 +1971,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#yrpejxfbzd .gt_heading {
+#pekjzivhyt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1792,13 +1983,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_bottom_border {
+#pekjzivhyt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_col_headings {
+#pekjzivhyt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1813,7 +2004,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_col_heading {
+#pekjzivhyt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1833,7 +2024,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#yrpejxfbzd .gt_column_spanner_outer {
+#pekjzivhyt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1845,15 +2036,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#yrpejxfbzd .gt_column_spanner_outer:first-child {
+#pekjzivhyt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yrpejxfbzd .gt_column_spanner_outer:last-child {
+#pekjzivhyt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yrpejxfbzd .gt_column_spanner {
+#pekjzivhyt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1865,11 +2056,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#yrpejxfbzd .gt_spanner_row {
+#pekjzivhyt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yrpejxfbzd .gt_group_heading {
+#pekjzivhyt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1895,7 +2086,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#yrpejxfbzd .gt_empty_group_heading {
+#pekjzivhyt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1910,15 +2101,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#yrpejxfbzd .gt_from_md > :first-child {
+#pekjzivhyt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yrpejxfbzd .gt_from_md > :last-child {
+#pekjzivhyt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yrpejxfbzd .gt_row {
+#pekjzivhyt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1937,7 +2128,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#yrpejxfbzd .gt_stub {
+#pekjzivhyt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1950,7 +2141,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yrpejxfbzd .gt_stub_row_group {
+#pekjzivhyt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1964,15 +2155,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#yrpejxfbzd .gt_row_group_first td {
+#pekjzivhyt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yrpejxfbzd .gt_row_group_first th {
+#pekjzivhyt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yrpejxfbzd .gt_summary_row {
+#pekjzivhyt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1982,16 +2173,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yrpejxfbzd .gt_first_summary_row {
+#pekjzivhyt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_first_summary_row.thick {
+#pekjzivhyt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yrpejxfbzd .gt_last_summary_row {
+#pekjzivhyt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2001,7 +2192,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_grand_summary_row {
+#pekjzivhyt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2011,7 +2202,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yrpejxfbzd .gt_first_grand_summary_row {
+#pekjzivhyt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2021,7 +2212,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_last_grand_summary_row_top {
+#pekjzivhyt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2031,11 +2222,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_striped {
+#pekjzivhyt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yrpejxfbzd .gt_table_body {
+#pekjzivhyt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2044,7 +2235,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_footnotes {
+#pekjzivhyt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2058,7 +2249,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_footnote {
+#pekjzivhyt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2067,7 +2258,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yrpejxfbzd .gt_sourcenotes {
+#pekjzivhyt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2081,7 +2272,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yrpejxfbzd .gt_sourcenote {
+#pekjzivhyt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2089,115 +2280,122 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yrpejxfbzd .gt_left {
+#pekjzivhyt .gt_left {
   text-align: left;
 }
 
-#yrpejxfbzd .gt_center {
+#pekjzivhyt .gt_center {
   text-align: center;
 }
 
-#yrpejxfbzd .gt_right {
+#pekjzivhyt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yrpejxfbzd .gt_font_normal {
+#pekjzivhyt .gt_font_normal {
   font-weight: normal;
 }
 
-#yrpejxfbzd .gt_font_bold {
+#pekjzivhyt .gt_font_bold {
   font-weight: bold;
 }
 
-#yrpejxfbzd .gt_font_italic {
+#pekjzivhyt .gt_font_italic {
   font-style: italic;
 }
 
-#yrpejxfbzd .gt_super {
+#pekjzivhyt .gt_super {
   font-size: 65%;
 }
 
-#yrpejxfbzd .gt_footnote_marks {
+#pekjzivhyt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yrpejxfbzd .gt_asterisk {
+#pekjzivhyt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yrpejxfbzd .gt_indent_1 {
+#pekjzivhyt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yrpejxfbzd .gt_indent_2 {
+#pekjzivhyt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yrpejxfbzd .gt_indent_3 {
+#pekjzivhyt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yrpejxfbzd .gt_indent_4 {
+#pekjzivhyt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yrpejxfbzd .gt_indent_5 {
+#pekjzivhyt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yrpejxfbzd .katex-display {
+#pekjzivhyt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yrpejxfbzd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pekjzivhyt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;4:  <p>Biomass estimate from recent autumn sample and surviving biomass from
-that sample based on PIT scanning.</p> </caption>
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="SizeClass">SizeClass</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Mean TL (mm)">Mean TL (mm)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Biomass (kg)">Biomass (kg)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Count">Count</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Alive">Alive</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Alive Biomass (kg)">Alive Biomass (kg)</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="SizeClass" class="gt_row gt_right">1</td>
-<td headers="Mean TL (mm)" class="gt_row gt_right">154</td>
-<td headers="Biomass (kg)" class="gt_row gt_right">16.148</td>
-<td headers="Count" class="gt_row gt_right">266</td>
-<td headers="Alive" class="gt_row gt_right">0</td>
-<td headers="Alive Biomass (kg)" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="SizeClass" class="gt_row gt_right">2</td>
-<td headers="Mean TL (mm)" class="gt_row gt_right">467</td>
-<td headers="Biomass (kg)" class="gt_row gt_right">6.798</td>
-<td headers="Count" class="gt_row gt_right">7</td>
-<td headers="Alive" class="gt_row gt_right">0</td>
-<td headers="Alive Biomass (kg)" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="SizeClass" class="gt_row gt_right">3</td>
-<td headers="Mean TL (mm)" class="gt_row gt_right">536</td>
-<td headers="Biomass (kg)" class="gt_row gt_right">20.310</td>
-<td headers="Count" class="gt_row gt_right">13</td>
-<td headers="Alive" class="gt_row gt_right">0</td>
-<td headers="Alive Biomass (kg)" class="gt_row gt_right">0</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="SizeClass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">SizeClass</th>
+<th id="Mean-TL-(mm)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean TL (mm)</th>
+<th id="Biomass-(kg)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Biomass (kg)</th>
+<th id="Count" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Count</th>
+<th id="Alive" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Alive</th>
+<th id="Alive-Biomass-(kg)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Alive Biomass (kg)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="SizeClass">1</td>
+<td class="gt_row gt_right" headers="Mean TL (mm)">154</td>
+<td class="gt_row gt_right" headers="Biomass (kg)">16.148</td>
+<td class="gt_row gt_right" headers="Count">266</td>
+<td class="gt_row gt_right" headers="Alive">1</td>
+<td class="gt_row gt_right" headers="Alive Biomass (kg)">0.245</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="SizeClass">2</td>
+<td class="gt_row gt_right" headers="Mean TL (mm)">467</td>
+<td class="gt_row gt_right" headers="Biomass (kg)">6.798</td>
+<td class="gt_row gt_right" headers="Count">7</td>
+<td class="gt_row gt_right" headers="Alive">2</td>
+<td class="gt_row gt_right" headers="Alive Biomass (kg)">1.648</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="SizeClass">3</td>
+<td class="gt_row gt_right" headers="Mean TL (mm)">536</td>
+<td class="gt_row gt_right" headers="Biomass (kg)">20.310</td>
+<td class="gt_row gt_right" headers="Count">13</td>
+<td class="gt_row gt_right" headers="Alive">3</td>
+<td class="gt_row gt_right" headers="Alive Biomass (kg)">5.145</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
+</figure>
 </div>
-<p>This biomass estimate isn’t the total population biomass. The known population in the backwater is 0 fish, and the estimated total population is 285. NA% of the known population has been at large for more than 3 years, (0 out of 0 fish, <a href="#tbl-CurrentKnownGT">Table&nbsp;1</a>). It is likely that most if not all of those fish are Size Class 3 adults.</p>
+</div>
+<p>This biomass estimate isn’t the total population biomass. The known population in the backwater is 90 fish, and the estimated total population is 546. 92% of the known population has been at large for more than 3 years, (83 out of 90 fish, <a href="#tbl-CurrentKnownGT" class="quarto-xref">Table&nbsp;1</a>). It is likely that most if not all of those fish are Size Class 3 adults.</p>
 </section>
 
 </main>
@@ -2237,18 +2435,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2280,11 +2467,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2294,8 +2518,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2307,7 +2540,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2351,6 +2706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2376,6 +2732,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2436,6 +2818,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
