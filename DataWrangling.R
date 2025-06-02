@@ -54,7 +54,8 @@ packages(ggplot2)
 packages(dplyr)     # data manipulation
 packages(magrittr)  # allows use of %<>% assignment pipe
 packages(glmmTMB) # General linear mixed model analysis built on TMB automatic differentiation engine
-packages(lubridate)
+packages(lubridate) # date and time manipulation
+packages(readxl) # import Excel spreadsheets
 
 # If Minimum date supplied, then use that otherwise 
 # find the most recent stocking into the backwater to use as 
@@ -108,12 +109,30 @@ ContactLastBW <- ContactsBW %>%
 # Clean up table, add size classes, create event and disposition fields for future NFWG table structure,
 # and add a recapture field based on actual previous records instead of relying on database classification
 NFWGTableBW <- NFWGAnalysis %>% 
-  left_join(LocationTable %>% select(LID, Complex), by = c("location_id" = "LID")) %>%
-  mutate(Backwater = ifelse(is.na(Complex), location, Complex)) %>%
-  select(Backwater, CollectionDate = handling_date, 
-         PIT1 = pit1, PIT2 = pit2, Species = species, Method = primary_method,
+   left_join(LocationTable %>% select(LID, Complex), by = c("location_id" = "LID")) %>%
+  mutate(Backwater = ifelse(is.na(Complex), location, Complex), 
+         CollectionDate = as.Date(handling_date)) %>%
+  select(Backwater, CollectionDate, PIT1 = pit1, PIT2 = pit2, Species = species, Method = primary_method,
          Sex = sex, TL = total_length, WT = weight, event, disposition) %>%
-  filter(Species == Sp, Backwater == StudyBackwater, CollectionDate>=MinReleaseDate) %>%
+  filter(Species == Sp, Backwater == StudyBackwater, CollectionDate>=MinReleaseDate)
+
+if(StudyBackwater == "Yuma Cove backwater"){
+Harvest2024 <- read_excel('data/2024FallHarvest.xlsx', "Sheet1") %>%
+  rename(PIT1 = PIT10, WT = Mass) %>%
+  mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, Method = "Netting") %>%
+  select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition)
+
+Stocking2025 <- read_excel('data/2025Stocking.xlsx', "Sheet1") %>%
+  rename(PIT1 = PIT10) %>%
+  mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, 
+         Method = "Netting", WT = NA) %>%
+  select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition)
+
+NFWGTableBW <- rbind(NFWGTableBW, Harvest2024, Stocking2025)
+rm(Harvest2024, Stocking2025)
+}
+
+NFWGTableBW <- NFWGTableBW %>%
   mutate(CollectionDate = as.Date(CollectionDate, format = "%Y-%m-%d"), 
          Month = month(CollectionDate), 
          Year = year(CollectionDate),
@@ -129,6 +148,7 @@ NFWGTableBW <- NFWGAnalysis %>%
   ungroup() %>% left_join(ContactLastBW, by = c("PIT1" = "PITIndex")) %>%
   mutate(MaxDAL = ifelse(!is.na(LastScan), 
                          as.integer(difftime(LastScan, CollectionDate, unit = 'days')), 0))
+
 
 # Add month names for graphing and tables
 NFWGTableBW$MonthName <- month.name[NFWGTableBW$Month]
