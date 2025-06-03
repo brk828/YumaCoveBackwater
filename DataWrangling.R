@@ -2,6 +2,7 @@
 # Prelimnary script to create backwater specific dataframes for any analysis
 # this must be run from a script with input parameters included
 
+# MinReleaseDate <- as.Date("2013-01-01") 
 # Load useful lab functions
 source("c:/GIT/RDependencies/LabFunctions.R")
 
@@ -10,9 +11,9 @@ if(!exists("StudyBackwater")){StudyBackwater <- "Yuma Cove backwater"}
 if(!exists("Sp")){Sp <- "XYTE"}
 if(!exists("SurvivalDAL")){SurvivalDAL <- 120}
 # Minimum TL for Size Class 2
-if(!exists("SizeClass2")){SizeClass2 <- 250}
+if(!exists("SizeClass2")){SizeClass2 <- 350}
 # Minimum TL for Size Class 3
-if(!exists("SizeClass3")){SizeClass3 <- 350}
+if(!exists("SizeClass3")){SizeClass3 <- 500}
 
 
 # Load data workspace or downlod and load if more than 7 days old
@@ -73,6 +74,54 @@ PITIndexBW <- BWPITIndex %>%
   filter(ReleaseDate>=MinReleaseDate | TaggingDate>=MinReleaseDate)
 
 rm(BWPITIndex)
+
+# Clean up table, add size classes, create event and disposition fields for future NFWG table structure,
+# and add a recapture field based on actual previous records instead of relying on database classification
+NFWGTableBW <- NFWGAnalysis %>% 
+  left_join(LocationTable %>% select(LID, Complex), by = c("location_id" = "LID")) %>%
+  mutate(Backwater = ifelse(is.na(Complex), location, Complex), 
+         CollectionDate = as.Date(handling_date)) %>%
+  select(Backwater, CollectionDate, PIT1 = pit1, PIT2 = pit2, Species = species, Method = primary_method,
+         Sex = sex, TL = total_length, WT = weight, event, disposition) %>%
+  filter(Species == Sp, Backwater == StudyBackwater, CollectionDate>=MinReleaseDate)
+
+if(StudyBackwater == "Yuma Cove backwater"){
+  Harvest2024 <- read_excel('data/2024FallHarvest.xlsx', "Sheet1") %>%
+    rename(PIT1 = PIT10, WT = Mass) %>%
+    mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, Method = "Netting") %>%
+    select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition, Recapture)
+
+HarvestPITIndex <- Harvest2024 %>% 
+  filter(Recapture == "No") %>%
+  mutate(PIT = PIT1, PITIndex = PIT1, Reach = 2, DateVerified = CollectionDate, FirstScan = NA, 
+         StockingID = NA, ReleaseTL = NA, ReleaseDate = NA, ReleaseYear = NA, ReleaseFY = NA,
+         TaggingTL = TL, TaggingDate = CollectionDate, TaggingYear = year(CollectionDate), 
+         TaggingFY = ifelse(month(as.Date(CollectionDate)) > 9, year(as.Date(CollectionDate)) + 1, year(as.Date(CollectionDate))),
+         TLCM = as.integer(TL*0.1)) %>%
+  select(Backwater, PIT, Reach, DateVerified, FirstScan, Species, StockingID, Sex, ReleaseTL, ReleaseDate,
+         ReleaseYear, ReleaseFY, TaggingTL, TaggingDate, TaggingYear, TaggingFY, TLCM, PITIndex)
+
+Harvest2024 <- Harvest2024 %>% select(-Recapture)
+  
+Stocking2025 <- read_excel('data/2025Stocking.xlsx', "Sheet1") %>%
+  rename(PIT1 = PIT10) %>%
+  mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, 
+         Method = "Netting", WT = NA) %>%
+  select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition)
+  
+StockingPITIndex <- Stocking2025 %>%
+  mutate(PIT = PIT1, PITIndex = PIT1, Reach = 2, DateVerified = CollectionDate, FirstScan = NA, 
+         StockingID = NA, ReleaseTL = TL, ReleaseDate = CollectionDate, ReleaseYear =  year(CollectionDate), 
+         ReleaseFY = ifelse(month(as.Date(CollectionDate)) > 9, year(as.Date(CollectionDate)) + 1, year(as.Date(CollectionDate))),
+         TaggingTL = NA, TaggingDate = NA, TaggingYear = NA, TaggingFY = NA, TLCM = as.integer(TL*0.1)) %>%
+  select(Backwater, PIT, Reach, DateVerified, FirstScan, Species, StockingID, Sex, ReleaseTL, ReleaseDate,
+         ReleaseYear, ReleaseFY, TaggingTL, TaggingDate, TaggingYear, TaggingFY, TLCM, PITIndex)
+  
+  NFWGTableBW <- rbind(NFWGTableBW, Harvest2024, Stocking2025)
+
+PITIndexBW <- rbind(PITIndexBW, HarvestPITIndex, StockingPITIndex)
+}
+
 # One tag listed as recap in database for Yuma Cove Backwater 003D772DD7
 ContactsBW <- BWContacts %>% filter(Backwater == StudyBackwater) %>%
   left_join(PITIndexBW %>% select(PIT, PITIndex, DateVerified), by = "PIT") %>%
@@ -106,32 +155,6 @@ ContactLastBW <- ContactsBW %>%
   mutate(LastScan = as.Date(Date)) %>% 
   select(PITIndex, LastScan, ScanHr, DateVerified)
 
-# Clean up table, add size classes, create event and disposition fields for future NFWG table structure,
-# and add a recapture field based on actual previous records instead of relying on database classification
-NFWGTableBW <- NFWGAnalysis %>% 
-   left_join(LocationTable %>% select(LID, Complex), by = c("location_id" = "LID")) %>%
-  mutate(Backwater = ifelse(is.na(Complex), location, Complex), 
-         CollectionDate = as.Date(handling_date)) %>%
-  select(Backwater, CollectionDate, PIT1 = pit1, PIT2 = pit2, Species = species, Method = primary_method,
-         Sex = sex, TL = total_length, WT = weight, event, disposition) %>%
-  filter(Species == Sp, Backwater == StudyBackwater, CollectionDate>=MinReleaseDate)
-
-if(StudyBackwater == "Yuma Cove backwater"){
-Harvest2024 <- read_excel('data/2024FallHarvest.xlsx', "Sheet1") %>%
-  rename(PIT1 = PIT10, WT = Mass) %>%
-  mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, Method = "Netting") %>%
-  select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition)
-
-Stocking2025 <- read_excel('data/2025Stocking.xlsx', "Sheet1") %>%
-  rename(PIT1 = PIT10) %>%
-  mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, 
-         Method = "Netting", WT = NA) %>%
-  select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition)
-
-NFWGTableBW <- rbind(NFWGTableBW, Harvest2024, Stocking2025)
-rm(Harvest2024, Stocking2025)
-}
-
 NFWGTableBW <- NFWGTableBW %>%
   mutate(CollectionDate = as.Date(CollectionDate, format = "%Y-%m-%d"), 
          Month = month(CollectionDate), 
@@ -147,7 +170,8 @@ NFWGTableBW <- NFWGTableBW %>%
   mutate(Recapture = ifelse(row_number() > 1, "Y", "N")) %>%
   ungroup() %>% left_join(ContactLastBW, by = c("PIT1" = "PITIndex")) %>%
   mutate(MaxDAL = ifelse(!is.na(LastScan), 
-                         as.integer(difftime(LastScan, CollectionDate, unit = 'days')), 0))
+                         as.integer(difftime(LastScan, CollectionDate, unit = 'days')), 0)) %>%
+  select(-event, -disposition)
 
 
 # Add month names for graphing and tables

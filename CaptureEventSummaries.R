@@ -1,11 +1,12 @@
 ### Capture event summaries to estimate untagged adult population (Size Class 2+)
 CaptureSummary <- NFWGTableBW %>%
-  filter(Event == "Capture") %>%
+  filter(Event == "capture") %>%
   group_by(Year, Month, SizeClass, Recapture, Sex) %>%
   summarise(Count = n(), meanTL = mean(TL), meanMass = mean(WT)) %>%
   ungroup()
 
 CaptureFallRecent <- NFWGTableBW %>%
+  filter(Event == "capture") %>%
   filter(Year == max(Year), Month > 9) %>%
   group_by(PIT1) %>%
   dplyr::slice(1) %>%
@@ -106,7 +107,7 @@ EstimatesPlot
 dev.off()
 # This produces a complete picture of the Size classes captured during capture events
 SizeClassPivot <- NFWGTableBW %>%
-  filter(Event == "Capture") %>%
+  filter(Event == "capture") %>%
   arrange(Year, Month) %>%
   group_by(Year, MonthName, SizeClass) %>%
   summarise(Count = n()) %>%

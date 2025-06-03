@@ -34,14 +34,14 @@ InitialKnownS <- FirstRecordSurvivors %>% filter(CollectionDate == InitialStockD
 RecentKnownS <- FirstRecordSurvivors %>% 
   filter(CollectionDate == InitialStockDate, 
          year(LastScan) == year(Sys.Date()), 
-         month(LastScan) > 3) %>%
+         month(LastScan) > 1) %>%
   group_by(Sex) %>%
   summarise(Count = n(), MeanTL = as.integer(mean(TL))) %>%
   ungroup()
 
 # Summarize the current population makeup as determined through PIT scanning
 CurrentKnown <- FirstRecordSurvivors %>% 
-  filter(year(LastScan) == year(Sys.Date()), month(LastScan) > 3)
+  filter(year(LastScan) == year(Sys.Date()), month(LastScan) > 1)
 
 # Going to Pivot current known to produce table summarizing current known population
 CurrentKnownPivot <- CurrentKnown %>% 
