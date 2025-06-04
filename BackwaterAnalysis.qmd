@@ -142,4 +142,4 @@ Total biomass of the most recent autumn sampling event `r max(Size2PlusAutumn$Ye
 RecentBiomassGT
 ```
 
-This biomass estimate isn't the total population biomass. The known population in the backwater is `r CurrentKnownPop` fish, and the estimated total population is `r PopulationNow`.  `r as.integer(nrow(CurrentKnownOld)/CurrentKnownPop*100)`% of the known population has been at large for more than 3 years, (`r nrow(CurrentKnownOld)` out of `r CurrentKnownPop` fish, @tbl-CurrentKnownGT). It is likely that most if not all of those fish are Size Class 3 adults. 
+This biomass estimate isn't the total population biomass. The known population in the backwater is `r CurrentKnownPop` fish, and the estimated total population is `r PopulationNow`. Of the known population,  `r as.integer(nrow(CurrentKnownOld)/CurrentKnownPop*100)`% has been at large for more than 3 years (`r nrow(CurrentKnownOld)` out of `r CurrentKnownPop` fish, @tbl-CurrentKnownGT). It is likely that most if not all of those fish are now size class 3 adults. 

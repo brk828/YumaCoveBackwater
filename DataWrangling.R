@@ -2,19 +2,27 @@
 # Prelimnary script to create backwater specific dataframes for any analysis
 # this must be run from a script with input parameters included
 
-# MinReleaseDate <- as.Date("2013-01-01") 
+MinReleaseDate <- as.Date("2013-01-01") 
 # Load useful lab functions
 source("c:/GIT/RDependencies/LabFunctions.R")
 
 # default values for variables if script run separately
 if(!exists("StudyBackwater")){StudyBackwater <- "Yuma Cove backwater"}
 if(!exists("Sp")){Sp <- "XYTE"}
-if(!exists("SurvivalDAL")){SurvivalDAL <- 120}
+if(!exists("SurvivalDAL")){SurvivalDAL <- 90}
 # Minimum TL for Size Class 2
 if(!exists("SizeClass2")){SizeClass2 <- 350}
 # Minimum TL for Size Class 3
 if(!exists("SizeClass3")){SizeClass3 <- 500}
 
+
+packages(ggplot2)
+packages(dplyr)     # data manipulation
+packages(magrittr)  # allows use of %<>% assignment pipe
+packages(glmmTMB) # General linear mixed model analysis built on TMB automatic differentiation engine
+packages(lubridate) # date and time manipulation
+packages(readxl) # import Excel spreadsheets
+packages(openxlsx) # package openxlsx is required
 
 # Load data workspace or downlod and load if more than 7 days old
 if(file.exists("data/BWScanningIndex.RData")){
@@ -51,13 +59,6 @@ if(file.exists("data/NFWGAnalysis.RData")){
 rm(euclid, split_hourly, download_nfwg, download_basin, download_backwater, data_date, data_info,
    Unit, TripTable, BWPITTwoBackwaters)
 
-packages(ggplot2)
-packages(dplyr)     # data manipulation
-packages(magrittr)  # allows use of %<>% assignment pipe
-packages(glmmTMB) # General linear mixed model analysis built on TMB automatic differentiation engine
-packages(lubridate) # date and time manipulation
-packages(readxl) # import Excel spreadsheets
-
 # If Minimum date supplied, then use that otherwise 
 # find the most recent stocking into the backwater to use as 
 # starting date.
@@ -88,6 +89,7 @@ NFWGTableBW <- NFWGAnalysis %>%
 if(StudyBackwater == "Yuma Cove backwater"){
   Harvest2024 <- read_excel('data/2024FallHarvest.xlsx', "Sheet1") %>%
     rename(PIT1 = PIT10, WT = Mass) %>%
+    filter(!is.na(PIT1)) %>%
     mutate(CollectionDate = as.Date(Date), Backwater = "Yuma Cove backwater", PIT2 = NA, Method = "Netting") %>%
     select(Backwater, CollectionDate, PIT1, PIT2, Species, Method, Sex, TL, WT, event, disposition, Recapture)
 
@@ -186,6 +188,11 @@ if(nrow(NFWGTableBW %>% filter(Recapture == "N", !is.na(LastScan))) - nrow(Conta
 
 rm(BWCaptures, BWReleases, ReachTable, Zone, ContactLastBW)
 
+wb <- createWorkbook() # creates object to hold workbook sheets
+addWorksheet(wb, "ContactSummary") # add worksheet
+writeData(wb, "ContactSummary", NFWGTableBW) # write dataframe
+saveWorkbook(wb, paste0("output/", StudyBackwater, "_Summary_",
+                        format(Sys.time(), "%Y%m%d"), ".xlsx"), overwrite = TRUE)
 
 
 
